@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/you_lose.ogg-094ecc64b2fdd355f65f815fb5b9f14b.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/you_lose.ogg"
+dest_files=[ "res://.import/you_lose.ogg-094ecc64b2fdd355f65f815fb5b9f14b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

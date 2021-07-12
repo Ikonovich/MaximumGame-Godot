@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/forceField_001.ogg-0332d59cd1459e6037772e50ba4232d3.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Sci-Fi Sounds/Audio/forceField_001.ogg"
+dest_files=[ "res://.import/forceField_001.ogg-0332d59cd1459e6037772e50ba4232d3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

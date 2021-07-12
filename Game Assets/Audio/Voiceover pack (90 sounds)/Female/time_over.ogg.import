@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/time_over.ogg-136d9e05b44866f77ad8d16a95955791.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Female/time_over.ogg"
+dest_files=[ "res://.import/time_over.ogg-136d9e05b44866f77ad8d16a95955791.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

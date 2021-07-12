@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/storyMode.ogg-232c239eb09f2ab2209811197f711c72.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/storyMode.ogg"
+dest_files=[ "res://.import/storyMode.ogg-232c239eb09f2ab2209811197f711c72.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

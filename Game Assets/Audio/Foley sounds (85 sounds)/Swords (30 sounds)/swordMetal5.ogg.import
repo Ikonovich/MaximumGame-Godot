@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/swordMetal5.ogg-a5bae8062fe2fe194eec4e1de597e485.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Foley sounds (85 sounds)/Swords (30 sounds)/swordMetal5.ogg"
+dest_files=[ "res://.import/swordMetal5.ogg-a5bae8062fe2fe194eec4e1de597e485.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

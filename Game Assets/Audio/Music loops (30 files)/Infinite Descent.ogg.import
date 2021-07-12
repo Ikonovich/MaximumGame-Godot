@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Infinite Descent.ogg-d817e6130f998c420862931825026a20.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Infinite Descent.ogg"
+dest_files=[ "res://.import/Infinite Descent.ogg-d817e6130f998c420862931825026a20.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

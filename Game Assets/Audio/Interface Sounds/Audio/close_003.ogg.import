@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/close_003.ogg-4cb0f021a7310fcf332095e78c404cb2.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Interface Sounds/Audio/close_003.ogg"
+dest_files=[ "res://.import/close_003.ogg-4cb0f021a7310fcf332095e78c404cb2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

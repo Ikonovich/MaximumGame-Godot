@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/choose_your_character.ogg-63729118a5167657182c869bbae3ce28.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover Pack Fighter/Audio/choose_your_character.ogg"
+dest_files=[ "res://.import/choose_your_character.ogg-63729118a5167657182c869bbae3ce28.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

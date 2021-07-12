@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/highscore.ogg-7add1b2b7157c0ac8efcc3478129a114.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/highscore.ogg"
+dest_files=[ "res://.import/highscore.ogg-7add1b2b7157c0ac8efcc3478129a114.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

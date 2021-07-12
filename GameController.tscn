@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/GameController.cs" type="Script" id=2]
+[ext_resource path="res://MagicSmoke/OrbitCamera.tscn" type="PackedScene" id=3]
+
+[node name="GameController" type="Node"]
+script = ExtResource( 2 )
+
+[node name="OrbitCamera" parent="." instance=ExtResource( 3 )]
+current = true
+MinimumElevation = -89.0
+MaximumElevation = 89.0
+MouseSensitivity = Vector2( 0.8, 10 )

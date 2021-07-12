@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/upgrade1.ogg-e91d883aa8922d785f6bd7d6c1f4d3d1.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/upgrade1.ogg"
+dest_files=[ "res://.import/upgrade1.ogg-e91d883aa8922d785f6bd7d6c1f4d3d1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

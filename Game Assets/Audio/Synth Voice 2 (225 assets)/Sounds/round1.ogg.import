@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/round1.ogg-a3de91ef955568750d75ee3b7bc27c92.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/round1.ogg"
+dest_files=[ "res://.import/round1.ogg-a3de91ef955568750d75ee3b7bc27c92.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/new_highscore.ogg-320932356e95a2ad86a432892edf23e0.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Male/new_highscore.ogg"
+dest_files=[ "res://.import/new_highscore.ogg-320932356e95a2ad86a432892edf23e0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

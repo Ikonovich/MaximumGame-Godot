@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/PlayableUnit.cs" type="Script" id=1]
+[ext_resource path="res://GUI/Scenes/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Weapons/Selector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Weapons/RayGun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game Assets/Models/Space Kit/craft_racer.glb" type="PackedScene" id=5]
+[ext_resource path="res://GUI/Scenes/HoverButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://StatusBar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game Assets/Effects/HaloEffect.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/FirstPersonCamera.cs" type="Script" id=9]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="BoxShape" id=2]
+
+[node name="Player" type="KinematicBody"]
+input_capture_on_drag = true
+collision_layer = 4
+collision_mask = 7
+script = ExtResource( 1 )
+WeaponOneScene = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.617409, 0, 0, 0, 0.446623, 0, 0, 0, 1.03686, 0, 0.461945, 0 )
+shape = SubResource( 1 )
+
+[node name="Pivot" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458421, -0.492504 )
+
+[node name="Camera" type="Camera" parent="Pivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107212, -0.0261438, -0.71503 )
+fov = 89.7623
+script = ExtResource( 9 )
+
+[node name="TargetRay" type="RayCast" parent="Pivot/Camera"]
+enabled = true
+cast_to = Vector3( 1, 0, 0 )
+collision_mask = 6
+collide_with_areas = true
+
+[node name="WeaponMount" type="Spatial" parent="Pivot"]
+transform = Transform( 5.59463, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.170442, -0.493085 )
+
+[node name="Selector" parent="Pivot" instance=ExtResource( 3 )]
+
+[node name="TargetArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.406078, 0 )
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape" type="CollisionShape" parent="TargetArea"]
+transform = Transform( 0.672475, 0, 0, 0, 0.546705, 0, 0, 0, 1, -0.00486958, -0.235875, 0.0102068 )
+shape = SubResource( 2 )
+
+[node name="craft_racer" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02613, 0.0700359, -1.51059 )
+
+[node name="HoverButton" parent="." instance=ExtResource( 6 )]
+transform = Transform( 9.14608, 0, 0, 0, 5.58895, 0, 0, 0, 5.67832, 0, 3.87091, 0 )
+
+[node name="StatusBar" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64889, 0 )
+
+[node name="SelectionHalo" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]

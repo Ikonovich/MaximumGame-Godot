@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/count_7.ogg-18845ffa7b1a15cd5520b4ba1fb4a017.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/count_7.ogg"
+dest_files=[ "res://.import/count_7.ogg-18845ffa7b1a15cd5520b4ba1fb4a017.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

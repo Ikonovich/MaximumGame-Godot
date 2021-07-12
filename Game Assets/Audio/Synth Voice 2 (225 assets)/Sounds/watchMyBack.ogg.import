@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/watchMyBack.ogg-9e3a8dc45d07e7088564d856159a0e4b.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/watchMyBack.ogg"
+dest_files=[ "res://.import/watchMyBack.ogg-9e3a8dc45d07e7088564d856159a0e4b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/aNewChallengerApproaches.ogg-bac120e819e130966512e744ae55dc76.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/aNewChallengerApproaches.ogg"
+dest_files=[ "res://.import/aNewChallengerApproaches.ogg-bac120e819e130966512e744ae55dc76.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

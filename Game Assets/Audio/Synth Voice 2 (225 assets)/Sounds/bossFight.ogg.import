@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bossFight.ogg-ffedc2e4249dc467a01860ae20f2be98.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/bossFight.ogg"
+dest_files=[ "res://.import/bossFight.ogg-ffedc2e4249dc467a01860ae20f2be98.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

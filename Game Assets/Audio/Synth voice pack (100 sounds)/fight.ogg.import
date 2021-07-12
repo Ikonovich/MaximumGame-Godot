@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fight.ogg-22b8bdb26213d42b6e298b88404284de.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/fight.ogg"
+dest_files=[ "res://.import/fight.ogg-22b8bdb26213d42b6e298b88404284de.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

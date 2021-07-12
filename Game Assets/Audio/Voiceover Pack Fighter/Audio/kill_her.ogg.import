@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/kill_her.ogg-0e9d0602210c5ea70d4b53ec2ad46aee.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover Pack Fighter/Audio/kill_her.ogg"
+dest_files=[ "res://.import/kill_her.ogg-0e9d0602210c5ea70d4b53ec2ad46aee.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

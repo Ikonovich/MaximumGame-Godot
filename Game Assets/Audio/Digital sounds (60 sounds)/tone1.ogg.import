@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tone1.ogg-9ff9013b7c29528b96e9cab34ccba3b1.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Digital sounds (60 sounds)/tone1.ogg"
+dest_files=[ "res://.import/tone1.ogg-9ff9013b7c29528b96e9cab34ccba3b1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

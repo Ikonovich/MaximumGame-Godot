@@ -1,0 +1,18 @@
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\obj\Debug\Maximum Game 0.12.csproj.AssemblyReference.cache
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\obj\Debug\Maximum Game 0.12.AssemblyInfoInputs.cache
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\obj\Debug\Maximum Game 0.12.AssemblyInfo.cs
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\obj\Debug\Maximum Game 0.12.csproj.CoreCompileInputs.cache
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\Maximum Game 0.12.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\Maximum Game 0.12.pdb
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\System.Buffers.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\System.Memory.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\System.Text.Json.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\bin\Debug\System.ValueTuple.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\obj\Debug\Maximum Game 0.12.csproj.CopyComplete
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\obj\Debug\Maximum Game 0.12.dll
+C:\Users\ikono\Documents\Maximum Game\.mono\temp\obj\Debug\Maximum Game 0.12.pdb

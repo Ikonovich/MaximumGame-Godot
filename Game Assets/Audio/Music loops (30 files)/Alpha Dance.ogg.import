@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Alpha Dance.ogg-0e1c14c6426c8eb03fc203e5c1c54ec1.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Alpha Dance.ogg"
+dest_files=[ "res://.import/Alpha Dance.ogg-0e1c14c6426c8eb03fc203e5c1c54ec1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

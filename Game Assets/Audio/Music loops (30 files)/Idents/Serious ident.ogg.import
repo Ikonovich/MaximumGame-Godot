@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Serious ident.ogg-414a2c752d27c2f9499076248db48dec.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Idents/Serious ident.ogg"
+dest_files=[ "res://.import/Serious ident.ogg-414a2c752d27c2f9499076248db48dec.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

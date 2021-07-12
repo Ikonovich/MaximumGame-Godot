@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jingles_PIZZA01.ogg-17d93ee82ec6f62de4062e346338f0a4.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Jingle sounds (85 sounds)/jingles_PIZZA/jingles_PIZZA01.ogg"
+dest_files=[ "res://.import/jingles_PIZZA01.ogg-17d93ee82ec6f62de4062e346338f0a4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/engineCircular_002.ogg-7608af6b003f708592970d9fe5b101ba.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Sci-Fi Sounds/Audio/engineCircular_002.ogg"
+dest_files=[ "res://.import/engineCircular_002.ogg-7608af6b003f708592970d9fe5b101ba.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

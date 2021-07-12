@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/level.ogg-2faf3ed265ca1398c72f5e6880697655.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Male/level.ogg"
+dest_files=[ "res://.import/level.ogg-2faf3ed265ca1398c72f5e6880697655.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

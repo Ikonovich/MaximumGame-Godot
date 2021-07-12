@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Retro Polka.ogg-f4124b7424161d2e173c2c31a4b3e375.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Retro/Retro Polka.ogg"
+dest_files=[ "res://.import/Retro Polka.ogg-f4124b7424161d2e173c2c31a4b3e375.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

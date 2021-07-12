@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/its_a_tie.ogg-b732f5745a2ee6b84ba8362a12fc90d3.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Male/its_a_tie.ogg"
+dest_files=[ "res://.import/its_a_tie.ogg-b732f5745a2ee6b84ba8362a12fc90d3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

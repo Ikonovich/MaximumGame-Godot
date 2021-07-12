@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mission_failed.ogg-063716be1b2b5a09160cae32b18cfcda.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Male/mission_failed.ogg"
+dest_files=[ "res://.import/mission_failed.ogg-063716be1b2b5a09160cae32b18cfcda.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

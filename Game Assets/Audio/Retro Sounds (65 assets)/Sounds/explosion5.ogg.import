@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/explosion5.ogg-0937517e87846003b3ae862d1623d6e0.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/explosion5.ogg"
+dest_files=[ "res://.import/explosion5.ogg-0937517e87846003b3ae862d1623d6e0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

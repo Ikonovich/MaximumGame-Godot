@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Game Assets/ParticlePack/light_03.png" type="Texture" id=1]
+[ext_resource path="res://Game Assets/ParticlePack/light_02.png" type="Texture" id=2]
+[ext_resource path="res://Game Assets/ParticlePack/light_01.png" type="Texture" id=3]
+[ext_resource path="res://Game Assets/Effects/DeathEffect.cs" type="Script" id=4]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.800766, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0170454 ), 0.184545, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+gravity = Vector3( 0, 0, 0 )
+scale_curve = SubResource( 2 )
+color = Color( 0.752941, 0.698039, 0.254902, 1 )
+anim_speed = 1.0
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+flags_no_depth_test = true
+flags_do_not_receive_shadows = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 0.203922, 0.105882, 0.827451, 1 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+next_pass = SubResource( 4 )
+flags_transparent = true
+flags_unshaded = true
+flags_no_depth_test = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 0.321569, 0.501961, 0.956863, 1 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=6]
+next_pass = SubResource( 5 )
+flags_transparent = true
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 0.160784, 0.529412, 0.819608, 1 )
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Effect" type="Particles" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
+emitting = false
+amount = 10
+lifetime = 0.9
+one_shot = true
+speed_scale = 0.7
+explosiveness = 0.3
+randomness = 1.0
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 7 )

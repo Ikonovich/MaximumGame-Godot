@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://GUI/Styles/ButtonNormal.tres" type="StyleBox" id=1]
+[ext_resource path="res://Game Assets/SkyPanoramas/lightblue_equirectangular.png" type="Texture" id=2]
+[ext_resource path="res://GUI/Scenes/BuildMenuButton.cs" type="Script" id=3]
+[ext_resource path="res://GUI/Scenes/InventoryPreviews/ModelingArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI/Scenes/InformationPopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Shaders/InventoryCornerCutter.shader" type="Shader" id=6]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 6 )
+shader_param/radius = 0.278
+shader_param/rgba = Plane( 1, 1, 1, 1 )
+shader_param/size = null
+
+[sub_resource type="PanoramaSky" id=2]
+panorama = ExtResource( 2 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+background_sky = SubResource( 2 )
+
+[sub_resource type="World" id=4]
+environment = SubResource( 3 )
+
+[node name="Node" type="Node"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 174.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 170, 256 )
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="PanelContainer"]
+material = SubResource( 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 169.0
+margin_bottom = 269.0
+
+[node name="Viewport" type="Viewport" parent="PanelContainer/ViewportContainer"]
+size = Vector2( 164, 264 )
+own_world = true
+world = SubResource( 4 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="MainScene" parent="PanelContainer/ViewportContainer/Viewport" instance=ExtResource( 4 )]
+
+[node name="PanelContainer2" parent="." instance=ExtResource( 5 )]
+margin_left = 83.7798
+margin_top = 168.238
+margin_right = 309.78
+margin_bottom = 432.238

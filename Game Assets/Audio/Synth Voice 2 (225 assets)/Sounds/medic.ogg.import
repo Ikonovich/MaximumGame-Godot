@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/medic.ogg-109e90564145b4fb9e82a3bdcc237153.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/medic.ogg"
+dest_files=[ "res://.import/medic.ogg-109e90564145b4fb9e82a3bdcc237153.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

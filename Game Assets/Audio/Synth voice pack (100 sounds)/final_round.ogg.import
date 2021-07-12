@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/final_round.ogg-449143a7c5e4b0589863dc17b52aba4b.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/final_round.ogg"
+dest_files=[ "res://.import/final_round.ogg-449143a7c5e4b0589863dc17b52aba4b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

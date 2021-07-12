@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Retro Reggae.ogg-7219ec5cf17f1b5d99e3fd1ce425c196.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Retro/Retro Reggae.ogg"
+dest_files=[ "res://.import/Retro Reggae.ogg-7219ec5cf17f1b5d99e3fd1ce425c196.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/deathmatch.ogg-e43baf61463cf82d531099c3e4c8e4c1.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/deathmatch.ogg"
+dest_files=[ "res://.import/deathmatch.ogg-e43baf61463cf82d531099c3e4c8e4c1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,195 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://GUI/Icons/power.png" type="Texture" id=1]
+[ext_resource path="res://Game Assets/Fonts/Kenney Future Square.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://GUI/Icons/silver-bars-38.png" type="Texture" id=3]
+[ext_resource path="res://GUI/Icons/crystal-38.png" type="Texture" id=4]
+[ext_resource path="res://GUI/lifebar_bg.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.176471, 0.168627, 0.270588, 0.498039 )
+border_width_left = 10
+border_width_right = 10
+border_color = Color( 0.792157, 0.596078, 0.00392157, 1 )
+border_blend = true
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxLine" id=3]
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 10
+vertical = true
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 9.1837e-39, 0.545455, 1 )
+colors = PoolColorArray( 0.976471, 0, 0, 1, 1, 0.984314, 0, 1, 0.14902, 1, 0, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -384.0
+margin_right = 384.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 768.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 768, 60 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+margin_left = 10.0
+margin_right = 758.0
+margin_bottom = 60.0
+
+[node name="EnergyDisplay" type="NinePatchRect" parent="PanelContainer/HBoxContainer"]
+margin_right = 150.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 150, 60 )
+
+[node name="EnergySymbol" type="TextureRect" parent="PanelContainer/HBoxContainer/EnergyDisplay"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 100.0
+margin_top = -30.0
+margin_bottom = 30.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyCount" type="Label" parent="PanelContainer/HBoxContainer/EnergyDisplay"]
+margin_left = 40.0
+margin_top = 18.6395
+margin_right = 34.6825
+margin_bottom = 36.6395
+custom_fonts/font = SubResource( 2 )
+text = "100000"
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/EnergyDisplay"]
+margin_left = 135.0
+margin_right = 85.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MetalDisplay" type="NinePatchRect" parent="PanelContainer/HBoxContainer"]
+margin_left = 154.0
+margin_right = 284.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 130, 60 )
+
+[node name="MetalSymbol" type="TextureRect" parent="PanelContainer/HBoxContainer/MetalDisplay"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 70.0
+margin_top = -30.0
+margin_bottom = 30.0
+texture = ExtResource( 3 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MetalCount" type="Label" parent="PanelContainer/HBoxContainer/MetalDisplay"]
+margin_left = 10.0
+margin_top = 18.6395
+margin_right = 34.6825
+margin_bottom = 36.6395
+custom_fonts/font = SubResource( 2 )
+text = "100000"
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/MetalDisplay"]
+margin_left = 115.0
+margin_right = 85.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrystalDisplay" type="NinePatchRect" parent="PanelContainer/HBoxContainer"]
+margin_left = 288.0
+margin_right = 418.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 130, 60 )
+
+[node name="CrystalSymbol" type="TextureRect" parent="PanelContainer/HBoxContainer/CrystalDisplay"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 70.0
+margin_top = -30.0
+margin_bottom = 30.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrystalCount" type="Label" parent="PanelContainer/HBoxContainer/CrystalDisplay"]
+margin_left = 10.0
+margin_top = 18.6395
+margin_right = 34.6825
+margin_bottom = 36.6395
+custom_fonts/font = SubResource( 2 )
+text = "100000"
+valign = 1
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/CrystalDisplay"]
+margin_left = 115.0
+margin_right = 85.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer"]
+margin_left = 422.0
+margin_right = 706.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 230, 60 )
+
+[node name="HealthBar" type="TextureProgress" parent="PanelContainer/HBoxContainer/HealthContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 277.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 270, 0 )
+value = 100.0
+texture_under = ExtResource( 5 )
+texture_progress = SubResource( 5 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

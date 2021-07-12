@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/switch19.ogg-3a3776990ff7a6d5468086979853fa44.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/UI sounds (50 sounds)/switch19.ogg"
+dest_files=[ "res://.import/switch19.ogg-3a3776990ff7a6d5468086979853fa44.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

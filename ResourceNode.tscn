@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game Assets/Models/Space Kit/rock_crystalsLargeB.glb" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/ResourceDeposit.cs" type="Script" id=2]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 1.09054
+
+[node name="CrystalNode" type="StaticBody"]
+script = ExtResource( 2 )
+
+[node name="rock_crystalsLargeB" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99503, 0, -1.51063 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.411261, 0, 0, 0, 0.267424, 0, 0, 0, 0.497341, 0.027249, 0.263512, -0.0334618 )
+shape = SubResource( 1 )

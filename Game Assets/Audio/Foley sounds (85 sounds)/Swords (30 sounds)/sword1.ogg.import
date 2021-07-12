@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sword1.ogg-5eabd82e226e2acfd9fb071b52a2521d.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Foley sounds (85 sounds)/Swords (30 sounds)/sword1.ogg"
+dest_files=[ "res://.import/sword1.ogg-5eabd82e226e2acfd9fb071b52a2521d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

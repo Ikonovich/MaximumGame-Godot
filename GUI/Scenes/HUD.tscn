@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/HUD.cs" type="Script" id=1]
+[ext_resource path="res://GUI/Scenes/HUDHealthBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ResourceBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI/Scenes/BuildMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI/Icons/crosshairBlackSmall.png" type="Texture" id=5]
+[ext_resource path="res://GUI/Icons/scificircle.png" type="Texture" id=6]
+
+[node name="Control" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CrossHair" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" parent="." instance=ExtResource( 2 )]
+
+[node name="WeaponSelector" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -290.0
+margin_top = -300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="WeaponSelector"]
+margin_right = 290.0
+margin_bottom = 300.0
+texture = ExtResource( 6 )
+
+[node name="WeaponIcon" type="MarginContainer" parent="WeaponSelector"]
+margin_right = 290.0
+margin_bottom = 300.0
+custom_constants/margin_top = 73
+custom_constants/margin_left = 67
+
+[node name="TextureRect" type="TextureRect" parent="WeaponSelector/WeaponIcon"]
+margin_left = 67.0
+margin_top = 73.0
+margin_right = 290.0
+margin_bottom = 300.0
+
+[node name="TopBar" parent="." instance=ExtResource( 3 )]
+
+[node name="BuildMenu" parent="." instance=ExtResource( 4 )]
+margin_left = -394.0
+margin_right = 394.0
+
+[node name="PanelContainer" parent="BuildMenu" index="0"]
+margin_bottom = 800.0
+
+[editable path="BuildMenu"]

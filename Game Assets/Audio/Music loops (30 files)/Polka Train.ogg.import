@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Polka Train.ogg-034e914d48d58809d2e8755061e6f89a.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Polka Train.ogg"
+dest_files=[ "res://.import/Polka Train.ogg-034e914d48d58809d2e8755061e6f89a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pepSound1.ogg-78d803024b687e67c2fbe5b8679380dc.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Digital sounds (60 sounds)/pepSound1.ogg"
+dest_files=[ "res://.import/pepSound1.ogg-78d803024b687e67c2fbe5b8679380dc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

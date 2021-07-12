@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cardSlide1.ogg-41dbab1b3c0c171c744976c94b1467fd.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Casino sounds (50 sounds)/cardSlide1.ogg"
+dest_files=[ "res://.import/cardSlide1.ogg-41dbab1b3c0c171c744976c94b1467fd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

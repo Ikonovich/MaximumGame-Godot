@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hostageFreed.ogg-91f1321458a5fdd296af5b107f8f2acd.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/hostageFreed.ogg"
+dest_files=[ "res://.import/hostageFreed.ogg-91f1321458a5fdd296af5b107f8f2acd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

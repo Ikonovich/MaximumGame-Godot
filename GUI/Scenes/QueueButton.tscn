@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Game Assets/SkyPanoramas/lightblue_equirectangular.png" type="Texture" id=1]
+[ext_resource path="res://GUI/Scenes/InventoryPreviews/ModelingArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GUI/Scenes/QueueButton.cs" type="Script" id=3]
+[ext_resource path="res://Scripts/Shaders/InventoryCornerCutter.shader" type="Shader" id=4]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.980392, 0.764706, 0.0352941, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 4 )
+shader_param/radius = 0.278
+shader_param/rgba = Plane( 1, 1, 1, 1 )
+shader_param/size = null
+
+[sub_resource type="PanoramaSky" id=4]
+panorama = ExtResource( 1 )
+
+[sub_resource type="Environment" id=5]
+background_mode = 2
+background_sky = SubResource( 4 )
+
+[sub_resource type="World" id=6]
+environment = SubResource( 5 )
+
+[node name="PanelContainer" type="PanelContainer"]
+margin_left = 44.0
+margin_right = 126.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 82, 91 )
+hint_tooltip = "Test"
+theme = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+material = SubResource( 3 )
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 81.0
+margin_bottom = 90.0
+mouse_filter = 1
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 80, 80 )
+size_override_stretch = true
+own_world = true
+world = SubResource( 6 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="MainScene" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]

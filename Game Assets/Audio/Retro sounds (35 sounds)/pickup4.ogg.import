@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pickup4.ogg-3f760c3142735049c88866c25d3116bb.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro sounds (35 sounds)/pickup4.ogg"
+dest_files=[ "res://.import/pickup4.ogg-3f760c3142735049c88866c25d3116bb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

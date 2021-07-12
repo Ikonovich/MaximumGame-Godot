@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/footstep_snow_003.ogg-c61d19e477c1a37bc7ef700773f5778e.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Impact Sounds/Audio/footstep_snow_003.ogg"
+dest_files=[ "res://.import/footstep_snow_003.ogg-c61d19e477c1a37bc7ef700773f5778e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

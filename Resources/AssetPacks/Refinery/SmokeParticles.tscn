@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/AssetPacks/Refinery/SmokeParticles_MeshMaterial.tres" type="Material" id=1]
+[ext_resource path="res://Resources/AssetPacks/Refinery/Smoke_ParticleMaterial.material" type="Material" id=2]
+
+[sub_resource type="QuadMesh" id=1]
+material = ExtResource( 1 )
+
+[node name="SmokeParticles" type="Particles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00134754, -0.0493689, -0.0104465 )
+amount = 128
+lifetime = 8.0
+speed_scale = 0.75
+visibility_aabb = AABB( -1.58589, -1, -1.94161, 3.08244, 16.092, 3.84897 )
+draw_order = 2
+process_material = ExtResource( 2 )
+draw_pass_1 = SubResource( 1 )

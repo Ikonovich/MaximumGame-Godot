@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mission complete.ogg-0757e68ec8b4196b2ecb20840c33dd1f.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/mission complete.ogg"
+dest_files=[ "res://.import/mission complete.ogg-0757e68ec8b4196b2ecb20840c33dd1f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

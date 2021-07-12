@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game Assets/Models/Nature Kit/grass.material" type="Material" id=1]
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -34.3, 1.4, -28.6023, -45.4, 1.4, -28.6023, -45.4, 1.4, -21.7023, -45.4, 1.4, 21.4977, -45.4, 1.4, 28.6977, -34.3, 1.4, 28.6977, 45.5, 1.4, -21.7023, 45.5, 1.4, -28.6023, 34.1, 1.4, -28.6023, 34.1, 1.4, 28.6977, 45.5, 1.4, 28.6977, 45.5, 1.4, 21.4977, -34.3, 1.4, -28.6023, -45.4, 1.4, -21.7023, -45.4, 1.4, -14.5023, 45.5, 1.4, -14.5023, 45.5, 1.4, -21.7023, 34.1, 1.4, -28.6023, -45.4, 1.4, 14.2977, -45.4, 1.4, 21.4977, -34.3, 1.4, 28.6977, 34.1, 1.4, 28.6977, 45.5, 1.4, 21.4977, 45.5, 1.4, 14.2977, -34.3, 1.4, -28.6023, -45.4, 1.4, -14.5023, -45.4, 1.4, -7.30233, 45.5, 1.4, -7.30233, 45.5, 1.4, -14.5023, 34.1, 1.4, -28.6023, -45.4, 1.4, 7.09767, -45.4, 1.4, 14.2977, -34.3, 1.4, 28.6977, 34.1, 1.4, 28.6977, 45.5, 1.4, 14.2977, 45.5, 1.4, 7.09767, -34.3, 1.4, -28.6023, -45.4, 1.4, -7.30233, -45.4, 1.4, -0.102331, -22.9, 1.4, -28.6023, 45.5, 1.4, -0.102331, 45.5, 1.4, -7.30233, 34.1, 1.4, -28.6023, 22.7, 1.4, -28.6023, -45.4, 1.4, -0.102331, -45.4, 1.4, 7.09767, -34.3, 1.4, 28.6977, -22.9, 1.4, 28.6977, 34.1, 1.4, 28.6977, 45.5, 1.4, 7.09767, 45.5, 1.4, -0.102331, 22.7, 1.4, 28.6977, 11.3, 1.4, 28.6977, 22.7, 1.4, 28.6977, 45.5, 1.4, -0.102331, -0.0999985, 1.4, -28.6023, -11.5, 1.4, -28.6023, -45.4, 1.4, -0.102331, -45.4, 1.4, -0.102331, -11.5, 1.4, 28.6977, -0.0999985, 1.4, 28.6977, 45.5, 1.4, -0.102331, 11.3, 1.4, -28.6023, -0.0999985, 1.4, -28.6023, -45.4, 1.4, -0.102331, -0.0999985, 1.4, 28.6977, 11.3, 1.4, 28.6977, -11.5, 1.4, -28.6023, -22.9, 1.4, -28.6023, -45.4, 1.4, -0.102331, -45.4, 1.4, -0.102331, -22.9, 1.4, 28.6977, -11.5, 1.4, 28.6977, 45.5, 1.4, -0.102331, 22.7, 1.4, -28.6023, 11.3, 1.4, -28.6023 )
+polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 5, 4, 3 ), PoolIntArray( 6, 8, 7 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 14, 13, 12 ), PoolIntArray( 17, 16, 15 ), PoolIntArray( 20, 19, 18 ), PoolIntArray( 23, 22, 21 ), PoolIntArray( 26, 25, 24 ), PoolIntArray( 29, 28, 27 ), PoolIntArray( 32, 31, 30 ), PoolIntArray( 35, 34, 33 ), PoolIntArray( 37, 36, 38 ), PoolIntArray( 38, 36, 39 ), PoolIntArray( 41, 40, 42 ), PoolIntArray( 42, 40, 43 ), PoolIntArray( 45, 44, 46 ), PoolIntArray( 46, 44, 47 ), PoolIntArray( 49, 48, 50 ), PoolIntArray( 50, 48, 51 ), PoolIntArray( 52, 54, 53 ), PoolIntArray( 57, 56, 55 ), PoolIntArray( 60, 59, 58 ), PoolIntArray( 62, 61, 63 ), PoolIntArray( 63, 61, 66 ), PoolIntArray( 63, 66, 65 ), PoolIntArray( 63, 65, 64 ), PoolIntArray( 67, 69, 68 ), PoolIntArray( 72, 71, 70 ), PoolIntArray( 75, 74, 73 ) ]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="Spatial" type="StaticBody"]
+
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.59371, 0, 0, 0 )
+navmesh = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 46, 0, 0, 0, 1, 0, 0, 0, 29.2023, 0, 0, 0 )
+material_override = ExtResource( 1 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 46, 0, 0, 0, 1, 0, 0, 0, 29.2023, 0, 0, 0 )
+shape = SubResource( 3 )

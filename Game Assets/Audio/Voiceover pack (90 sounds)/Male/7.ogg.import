@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/7.ogg-f4ab54cc0435e326002edcd15845a908.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Male/7.ogg"
+dest_files=[ "res://.import/7.ogg-f4ab54cc0435e326002edcd15845a908.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rumble2.ogg-79978155a5b3f559b75ce87b37b08a45.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro sounds (35 sounds)/rumble2.ogg"
+dest_files=[ "res://.import/rumble2.ogg-79978155a5b3f559b75ce87b37b08a45.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

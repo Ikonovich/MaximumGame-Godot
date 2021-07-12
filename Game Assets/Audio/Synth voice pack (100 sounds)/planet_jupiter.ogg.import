@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/planet_jupiter.ogg-5dc5864f6c839bdb0192b8e1f7b47395.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/planet_jupiter.ogg"
+dest_files=[ "res://.import/planet_jupiter.ogg-5dc5864f6c839bdb0192b8e1f7b47395.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/impactPunch_heavy_002.ogg-4ae51deeb7693d0f5486c1253043e0bd.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Impact Sounds/Audio/impactPunch_heavy_002.ogg"
+dest_files=[ "res://.import/impactPunch_heavy_002.ogg-4ae51deeb7693d0f5486c1253043e0bd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

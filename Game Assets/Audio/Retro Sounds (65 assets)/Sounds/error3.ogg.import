@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/error3.ogg-0f4dac8ad6c2970419645608b8ca284d.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/error3.ogg"
+dest_files=[ "res://.import/error3.ogg-0f4dac8ad6c2970419645608b8ca284d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/error_002.ogg-97463a856db7246753907e69e8ac700f.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Interface Sounds/Audio/error_002.ogg"
+dest_files=[ "res://.import/error_002.ogg-97463a856db7246753907e69e8ac700f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

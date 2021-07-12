@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mercury.ogg-0d028186713397ac76ec953e23c0da7b.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/mercury.ogg"
+dest_files=[ "res://.import/mercury.ogg-0d028186713397ac76ec953e23c0da7b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

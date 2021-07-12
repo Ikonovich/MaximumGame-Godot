@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/JsonHandler.cs" type="Script" id=1]
+
+[node name="Control" type="Control"]
+visible = false
+light_mask = 0
+grow_horizontal = 0
+grow_vertical = 0
+input_pass_on_modal_close_click = false
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+script = ExtResource( 1 )

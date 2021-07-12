@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/platesHit1.ogg-ea2fdf68b57ddc2aef60567eb036c269.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Foley sounds (85 sounds)/Metal plates (14 sounds)/platesHit1.ogg"
+dest_files=[ "res://.import/platesHit1.ogg-ea2fdf68b57ddc2aef60567eb036c269.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Cheerful Annoyance.ogg-c3ca77571f9c0af9fb4845a2f5c0db76.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Cheerful Annoyance.ogg"
+dest_files=[ "res://.import/Cheerful Annoyance.ogg-c3ca77571f9c0af9fb4845a2f5c0db76.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

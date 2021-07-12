@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hold.ogg-469519664d121145e5d16d797a95cc7f.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Male/hold.ogg"
+dest_files=[ "res://.import/hold.ogg-469519664d121145e5d16d797a95cc7f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

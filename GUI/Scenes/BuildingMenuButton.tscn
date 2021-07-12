@@ -1,0 +1,209 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://GUI/Styles/ButtonNormal.tres" type="StyleBox" id=1]
+[ext_resource path="res://Game Assets/SkyPanoramas/lightblue_equirectangular.png" type="Texture" id=2]
+[ext_resource path="res://GUI/Scenes/BuildMenuButton.cs" type="Script" id=3]
+[ext_resource path="res://GUI/Scenes/InventoryPreviews/ModelingArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI/Icons/silver-bars-38.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Shaders/InventoryCornerCutter.shader" type="Shader" id=6]
+[ext_resource path="res://GUI/Icons/crystal-38.png" type="Texture" id=7]
+[ext_resource path="res://GUI/Fonts/Kenney Fonts/Kenney Thick.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://GUI/Fonts/Kenney Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Game Assets/GUI/Icons/power.png" type="Texture" id=10]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 6 )
+shader_param/radius = 0.278
+shader_param/rgba = Plane( 1, 1, 1, 1 )
+shader_param/size = null
+
+[sub_resource type="PanoramaSky" id=2]
+panorama = ExtResource( 2 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+background_sky = SubResource( 2 )
+
+[sub_resource type="World" id=4]
+environment = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+extra_spacing_bottom = 5
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+font_data = ExtResource( 9 )
+
+[node name="PanelContainer" type="PanelContainer"]
+margin_right = 174.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 170, 224 )
+size_flags_horizontal = 5
+size_flags_vertical = 5
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+material = SubResource( 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 169.0
+margin_bottom = 219.0
+mouse_filter = 1
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 164, 214 )
+own_world = true
+world = SubResource( 4 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="MainScene" parent="ViewportContainer/Viewport" instance=ExtResource( 4 )]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Popup" type="Popup" parent="Node"]
+margin_left = 86.7644
+margin_top = 136.821
+margin_right = 86.7644
+margin_bottom = 136.821
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="Node/Popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -113.0
+margin_top = -80.0
+margin_right = 113.0
+margin_bottom = 80.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node/Popup/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 227.0
+margin_bottom = 153.0
+mouse_filter = 2
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="Node/Popup/PanelContainer/VBoxContainer"]
+margin_right = 220.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 14 )
+mouse_filter = 2
+
+[node name="Name" type="RichTextLabel" parent="Node/Popup/PanelContainer/VBoxContainer/HBoxContainer1"]
+margin_right = 220.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 220, 20 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.101961, 0, 1, 1 )
+bbcode_text = "Information:"
+tab_size = 3
+text = "Information:"
+scroll_active = false
+override_selected_font_color = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Node/Popup/PanelContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 220.0
+margin_bottom = 62.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node/Popup/PanelContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 38.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 38, 38 )
+mouse_filter = 2
+texture = ExtResource( 10 )
+stretch_mode = 6
+
+[node name="PowerLabel" type="RichTextLabel" parent="Node/Popup/PanelContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 42.0
+margin_top = 4.0
+margin_right = 212.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 170, 15 )
+mouse_filter = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_text = "100/2000"
+text = "100/2000"
+fit_content_height = true
+scroll_active = false
+override_selected_font_color = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Node/Popup/PanelContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 220.0
+margin_bottom = 104.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node/Popup/PanelContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 38.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 38, 38 )
+mouse_filter = 2
+texture = ExtResource( 5 )
+stretch_mode = 6
+
+[node name="MetalLabel" type="RichTextLabel" parent="Node/Popup/PanelContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 42.0
+margin_top = 4.0
+margin_right = 212.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 170, 15 )
+mouse_filter = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_text = "100/2000"
+text = "100/2000"
+fit_content_height = true
+scroll_active = false
+override_selected_font_color = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Node/Popup/PanelContainer/VBoxContainer"]
+margin_top = 108.0
+margin_right = 220.0
+margin_bottom = 146.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Node/Popup/PanelContainer/VBoxContainer/HBoxContainer4"]
+margin_right = 38.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 38, 38 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+stretch_mode = 6
+
+[node name="CrystalLabel" type="RichTextLabel" parent="Node/Popup/PanelContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 42.0
+margin_top = 4.0
+margin_right = 212.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 170, 15 )
+mouse_filter = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_text = "100/2000"
+text = "100/2000"
+fit_content_height = true
+scroll_active = false
+override_selected_font_color = true

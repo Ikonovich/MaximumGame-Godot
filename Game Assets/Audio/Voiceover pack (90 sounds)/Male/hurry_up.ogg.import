@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hurry_up.ogg-75af17eac284f759c57e13edb9b36180.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Male/hurry_up.ogg"
+dest_files=[ "res://.import/hurry_up.ogg-75af17eac284f759c57e13edb9b36180.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

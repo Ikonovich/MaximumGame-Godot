@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Weapons/RaySelector.cs" type="Script" id=1]
+[ext_resource path="res://GUI/Icons/arrow-cursorNew.png" type="Texture" id=2]
+
+[node name="Selector" type="Spatial"]
+visible = false
+script = ExtResource( 1 )
+Icon = ExtResource( 2 )
+
+[node name="RayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, -200 )
+collision_mask = 23
+collide_with_areas = true

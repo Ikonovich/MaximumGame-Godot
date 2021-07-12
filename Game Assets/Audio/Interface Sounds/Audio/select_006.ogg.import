@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/select_006.ogg-98ad44cc22794c0cd28641e1fc6b577e.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Interface Sounds/Audio/select_006.ogg"
+dest_files=[ "res://.import/select_006.ogg-98ad44cc22794c0cd28641e1fc6b577e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

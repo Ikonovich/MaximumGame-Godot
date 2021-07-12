@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/killIt.ogg-075ffad0c2928e00bdbf6bca712a0cbd.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/killIt.ogg"
+dest_files=[ "res://.import/killIt.ogg-075ffad0c2928e00bdbf6bca712a0cbd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

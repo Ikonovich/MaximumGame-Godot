@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_cover_me.ogg-f0014308877469ae48591242ddb5b858.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Female/war_cover_me.ogg"
+dest_files=[ "res://.import/war_cover_me.ogg-f0014308877469ae48591242ddb5b858.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

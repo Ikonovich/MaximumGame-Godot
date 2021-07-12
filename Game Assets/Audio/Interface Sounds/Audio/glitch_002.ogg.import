@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/glitch_002.ogg-74c0ffea17594368c1dd3e9c6d8d4e14.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Interface Sounds/Audio/glitch_002.ogg"
+dest_files=[ "res://.import/glitch_002.ogg-74c0ffea17594368c1dd3e9c6d8d4e14.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_go_go_go.ogg-e88675bd3db5b3a216ae08685162a881.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Female/war_go_go_go.ogg"
+dest_files=[ "res://.import/war_go_go_go.ogg-e88675bd3db5b3a216ae08685162a881.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

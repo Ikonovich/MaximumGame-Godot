@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/planet_uranus.ogg-a08e47163c9f7d44c26179d09f2fd36c.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/planet_uranus.ogg"
+dest_files=[ "res://.import/planet_uranus.ogg-a08e47163c9f7d44c26179d09f2fd36c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

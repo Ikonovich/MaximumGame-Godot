@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spaceTrash4.ogg-7a0ec398b54f6decd9b7feb3edf84998.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Digital sounds (60 sounds)/spaceTrash4.ogg"
+dest_files=[ "res://.import/spaceTrash4.ogg-7a0ec398b54f6decd9b7feb3edf84998.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

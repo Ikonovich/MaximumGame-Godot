@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tie_breaker.ogg-1a315816b355c72d8aec3f590498f946.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover Pack Fighter/Audio/tie_breaker.ogg"
+dest_files=[ "res://.import/tie_breaker.ogg-1a315816b355c72d8aec3f590498f946.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

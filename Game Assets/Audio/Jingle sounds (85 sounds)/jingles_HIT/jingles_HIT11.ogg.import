@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jingles_HIT11.ogg-d65e7b6b7e4e2841c132f43151d364c0.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Jingle sounds (85 sounds)/jingles_HIT/jingles_HIT11.ogg"
+dest_files=[ "res://.import/jingles_HIT11.ogg-d65e7b6b7e4e2841c132f43151d364c0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

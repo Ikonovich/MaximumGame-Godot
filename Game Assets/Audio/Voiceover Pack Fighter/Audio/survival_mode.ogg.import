@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/survival_mode.ogg-e75c15ba7ff68bd098772c64faa2df3b.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover Pack Fighter/Audio/survival_mode.ogg"
+dest_files=[ "res://.import/survival_mode.ogg-e75c15ba7ff68bd098772c64faa2df3b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

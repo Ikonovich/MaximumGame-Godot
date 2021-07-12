@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/objectiveComplete.ogg-c4026dad31662769239ec5ccab210fad.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/objectiveComplete.ogg"
+dest_files=[ "res://.import/objectiveComplete.ogg-c4026dad31662769239ec5ccab210fad.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

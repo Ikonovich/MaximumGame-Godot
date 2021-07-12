@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/flawless_victory.ogg-a74df2e1b70bdcff47ab84adb0af1a74.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover Pack Fighter/Audio/flawless_victory.ogg"
+dest_files=[ "res://.import/flawless_victory.ogg-a74df2e1b70bdcff47ab84adb0af1a74.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/engagingWithAgressiveTactics.ogg-863061d97185289a6a4453b202620c5f.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/engagingWithAgressiveTactics.ogg"
+dest_files=[ "res://.import/engagingWithAgressiveTactics.ogg-863061d97185289a6a4453b202620c5f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

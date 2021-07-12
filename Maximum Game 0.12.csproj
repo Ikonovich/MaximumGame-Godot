@@ -1,0 +1,11 @@
+<Project Sdk="Godot.NET.Sdk/3.3.0">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>MaximumGame0.Empty</RootNamespace>
+  </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include = "System.Text.Json">
+        <Version>5.0.0</Version>
+          </PackageReference>
+            </ItemGroup>
+</Project>

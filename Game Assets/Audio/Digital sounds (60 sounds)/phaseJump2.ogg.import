@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/phaseJump2.ogg-a6a93f12b3b2af53c9e1d3fa62f52fc2.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Digital sounds (60 sounds)/phaseJump2.ogg"
+dest_files=[ "res://.import/phaseJump2.ogg-a6a93f12b3b2af53c9e1d3fa62f52fc2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

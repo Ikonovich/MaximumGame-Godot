@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/scroll_002.ogg-ccdedecc6ac51d818f2be0212489151a.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Interface Sounds/Audio/scroll_002.ogg"
+dest_files=[ "res://.import/scroll_002.ogg-ccdedecc6ac51d818f2be0212489151a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/laser1.ogg-74d70be5e25bcfdd18d5d207763ce238.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Digital sounds (60 sounds)/laser1.ogg"
+dest_files=[ "res://.import/laser1.ogg-74d70be5e25bcfdd18d5d207763ce238.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

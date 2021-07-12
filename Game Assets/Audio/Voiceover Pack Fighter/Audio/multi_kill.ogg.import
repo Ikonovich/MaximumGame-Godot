@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/multi_kill.ogg-a6e588468663586f42e69f2335ae5bc7.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover Pack Fighter/Audio/multi_kill.ogg"
+dest_files=[ "res://.import/multi_kill.ogg-a6e588468663586f42e69f2335ae5bc7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

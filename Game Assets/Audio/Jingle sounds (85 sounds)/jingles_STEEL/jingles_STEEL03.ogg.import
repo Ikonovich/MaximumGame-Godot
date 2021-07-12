@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jingles_STEEL03.ogg-e3a041960abd5bfd4ca72b26bf595bf5.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Jingle sounds (85 sounds)/jingles_STEEL/jingles_STEEL03.ogg"
+dest_files=[ "res://.import/jingles_STEEL03.ogg-e3a041960abd5bfd4ca72b26bf595bf5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

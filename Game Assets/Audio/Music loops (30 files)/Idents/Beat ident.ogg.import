@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Beat ident.ogg-3e23274dc0b7ea672d5b40c09b57a109.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Idents/Beat ident.ogg"
+dest_files=[ "res://.import/Beat ident.ogg-3e23274dc0b7ea672d5b40c09b57a109.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

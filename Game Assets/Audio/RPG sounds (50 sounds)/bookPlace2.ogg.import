@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bookPlace2.ogg-1b58d6c294d7b16abd6f6ffaeccd4293.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/RPG sounds (50 sounds)/bookPlace2.ogg"
+dest_files=[ "res://.import/bookPlace2.ogg-1b58d6c294d7b16abd6f6ffaeccd4293.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

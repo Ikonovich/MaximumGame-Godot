@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/planet_saturn.ogg-e135a2995b1ffdeb22c310301e696b2c.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/planet_saturn.ogg"
+dest_files=[ "res://.import/planet_saturn.ogg-e135a2995b1ffdeb22c310301e696b2c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

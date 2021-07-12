@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lose1.ogg-a4c7d4a11aa5b88b26cfcf05135c91d4.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/lose1.ogg"
+dest_files=[ "res://.import/lose1.ogg-a4c7d4a11aa5b88b26cfcf05135c91d4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

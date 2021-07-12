@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/untouchable.ogg-f63c497649d6229a6f3124845a40a966.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/untouchable.ogg"
+dest_files=[ "res://.import/untouchable.ogg-f63c497649d6229a6f3124845a40a966.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

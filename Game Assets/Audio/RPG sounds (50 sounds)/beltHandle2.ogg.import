@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/beltHandle2.ogg-c151cde57ca948602c7633755a16dcc3.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/RPG sounds (50 sounds)/beltHandle2.ogg"
+dest_files=[ "res://.import/beltHandle2.ogg-c151cde57ca948602c7633755a16dcc3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

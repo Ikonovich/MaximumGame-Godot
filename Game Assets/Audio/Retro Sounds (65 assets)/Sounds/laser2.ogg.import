@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/laser2.ogg-f64d851ac5ec6879b650c2bdb760efbf.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/laser2.ogg"
+dest_files=[ "res://.import/laser2.ogg-f64d851ac5ec6879b650c2bdb760efbf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

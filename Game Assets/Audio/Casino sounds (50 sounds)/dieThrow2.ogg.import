@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dieThrow2.ogg-7572b85f779ff77c77aa8c58a1a777b1.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Casino sounds (50 sounds)/dieThrow2.ogg"
+dest_files=[ "res://.import/dieThrow2.ogg-7572b85f779ff77c77aa8c58a1a777b1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

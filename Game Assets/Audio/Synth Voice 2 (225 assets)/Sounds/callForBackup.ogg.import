@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/callForBackup.ogg-b8f4c4eb6c2352ff99a0e095ea046224.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/callForBackup.ogg"
+dest_files=[ "res://.import/callForBackup.ogg-b8f4c4eb6c2352ff99a0e095ea046224.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

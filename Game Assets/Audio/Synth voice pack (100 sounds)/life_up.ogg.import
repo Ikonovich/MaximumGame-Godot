@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/life_up.ogg-2902b7f3f2b7345f38f10c46f53de039.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/life_up.ogg"
+dest_files=[ "res://.import/life_up.ogg-2902b7f3f2b7345f38f10c46f53de039.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

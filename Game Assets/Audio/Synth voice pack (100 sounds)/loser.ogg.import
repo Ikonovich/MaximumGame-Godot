@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/loser.ogg-3b44efece89125c350faf2162e1e62a5.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth voice pack (100 sounds)/loser.ogg"
+dest_files=[ "res://.import/loser.ogg-3b44efece89125c350faf2162e1e62a5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

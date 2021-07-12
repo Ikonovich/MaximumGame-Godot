@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/killHer.ogg-b6301b566801ac44f6f3b2501a6749e3.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/killHer.ogg"
+dest_files=[ "res://.import/killHer.ogg-b6301b566801ac44f6f3b2501a6749e3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

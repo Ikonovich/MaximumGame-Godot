@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fall3.ogg-67cee9085ac60f1e434d8f02e82e47d9.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/fall3.ogg"
+dest_files=[ "res://.import/fall3.ogg-67cee9085ac60f1e434d8f02e82e47d9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

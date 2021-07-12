@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jump1.ogg-80b894fc0b1c1c38f2ae607fd87adeb4.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/jump1.ogg"
+dest_files=[ "res://.import/jump1.ogg-80b894fc0b1c1c38f2ae607fd87adeb4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

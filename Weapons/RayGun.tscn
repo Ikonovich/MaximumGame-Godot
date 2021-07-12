@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Weapons/RayGun.cs" type="Script" id=1]
+[ext_resource path="res://GUI/Icons/CrosshairSelected.png" type="Texture" id=2]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+Icon = ExtResource( 2 )
+
+[node name="RayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, -100 )
+collision_mask = 7

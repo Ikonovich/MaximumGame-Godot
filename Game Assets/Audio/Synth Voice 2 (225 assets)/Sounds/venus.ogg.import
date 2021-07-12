@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/venus.ogg-0e500420ced31e7c7b31b818318f6bba.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/venus.ogg"
+dest_files=[ "res://.import/venus.ogg-0e500420ced31e7c7b31b818318f6bba.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

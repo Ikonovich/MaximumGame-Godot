@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/drip3.ogg-ac17f052bbf0df1de8ae5a1cd4d677bc.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Foley sounds (85 sounds)/Bathroom (11 sounds)/drip3.ogg"
+dest_files=[ "res://.import/drip3.ogg-ac17f052bbf0df1de8ae5a1cd4d677bc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

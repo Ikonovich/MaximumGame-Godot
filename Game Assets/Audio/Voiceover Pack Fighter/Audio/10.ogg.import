@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/10.ogg-f0ad08a44d558d67ad67710d256c8e41.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover Pack Fighter/Audio/10.ogg"
+dest_files=[ "res://.import/10.ogg-f0ad08a44d558d67ad67710d256c8e41.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

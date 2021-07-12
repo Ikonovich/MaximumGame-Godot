@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minimize_008.ogg-a43d1bddf17ce62a17b3038f541de14b.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Interface Sounds/Audio/minimize_008.ogg"
+dest_files=[ "res://.import/minimize_008.ogg-a43d1bddf17ce62a17b3038f541de14b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Drumming Sticks.ogg-9f3b182cccfeeefe9a09ff5524af48fc.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Drumming Sticks.ogg"
+dest_files=[ "res://.import/Drumming Sticks.ogg-9f3b182cccfeeefe9a09ff5524af48fc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

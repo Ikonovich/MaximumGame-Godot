@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_call_for_backup.ogg-8b8447874a34b294a121e6c8c018a62c.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Female/war_call_for_backup.ogg"
+dest_files=[ "res://.import/war_call_for_backup.ogg-8b8447874a34b294a121e6c8c018a62c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

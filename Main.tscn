@@ -1,0 +1,109 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Game Assets/Models/Nature Kit/grass.material" type="Material" id=1]
+[ext_resource path="res://Actors/Units/ArmoredCar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ResourceNode.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Weapons/RayMiner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Actors/Units/LightningRifleMech.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/SignalGenerator.cs" type="Script" id=7]
+[ext_resource path="res://GameController.tscn" type="PackedScene" id=11]
+[ext_resource path="res://MagicSmoke/DebugRenderer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scripts/Player.cs" type="Script" id=14]
+[ext_resource path="res://Game Assets/SkyPanoramas/Epic_BlueSunset_EquiRect_flat.png" type="Texture" id=16]
+[ext_resource path="res://MagicSmoke/DebugMaterials/DebugMaterial.material" type="Material" id=17]
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -34.3, 1.4, -28.6023, -45.4, 1.4, -28.6023, -45.4, 1.4, -21.7023, -45.4, 1.4, 21.4977, -45.4, 1.4, 28.6977, -34.3, 1.4, 28.6977, 45.5, 1.4, -21.7023, 45.5, 1.4, -28.6023, 34.1, 1.4, -28.6023, 34.1, 1.4, 28.6977, 45.5, 1.4, 28.6977, 45.5, 1.4, 21.4977, -34.3, 1.4, -28.6023, -45.4, 1.4, -21.7023, -45.4, 1.4, -14.5023, 45.5, 1.4, -14.5023, 45.5, 1.4, -21.7023, 34.1, 1.4, -28.6023, -45.4, 1.4, 14.2977, -45.4, 1.4, 21.4977, -34.3, 1.4, 28.6977, 34.1, 1.4, 28.6977, 45.5, 1.4, 21.4977, 45.5, 1.4, 14.2977, -34.3, 1.4, -28.6023, -45.4, 1.4, -14.5023, -45.4, 1.4, -7.3023, 45.5, 1.4, -7.3023, 45.5, 1.4, -14.5023, 34.1, 1.4, -28.6023, -45.4, 1.4, 7.0977, -45.4, 1.4, 14.2977, -34.3, 1.4, 28.6977, 34.1, 1.4, 28.6977, 45.5, 1.4, 14.2977, 45.5, 1.4, 7.0977, -34.3, 1.4, -28.6023, -45.4, 1.4, -7.3023, -45.4, 1.4, -0.102299, -22.9, 1.4, -28.6023, 45.5, 1.4, -0.102299, 45.5, 1.4, -7.3023, 34.1, 1.4, -28.6023, 22.7, 1.4, -28.6023, -45.4, 1.4, -0.102299, -45.4, 1.4, 7.0977, -34.3, 1.4, 28.6977, -22.9, 1.4, 28.6977, 34.1, 1.4, 28.6977, 45.5, 1.4, 7.0977, 45.5, 1.4, -0.102299, 22.7, 1.4, 28.6977, 11.3, 1.4, 28.6977, 22.7, 1.4, 28.6977, 45.5, 1.4, -0.102299, -0.0999985, 1.4, -28.6023, -11.5, 1.4, -28.6023, -45.4, 1.4, -0.102299, -45.4, 1.4, -0.102299, -11.5, 1.4, 28.6977, -0.0999985, 1.4, 28.6977, 45.5, 1.4, -0.102299, 11.3, 1.4, -28.6023, -0.0999985, 1.4, -28.6023, -45.4, 1.4, -0.102299, -0.0999985, 1.4, 28.6977, 11.3, 1.4, 28.6977, -11.5, 1.4, -28.6023, -22.9, 1.4, -28.6023, -45.4, 1.4, -0.102299, -45.4, 1.4, -0.102299, -22.9, 1.4, 28.6977, -11.5, 1.4, 28.6977, 45.5, 1.4, -0.102299, 22.7, 1.4, -28.6023, 11.3, 1.4, -28.6023 )
+polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 5, 4, 3 ), PoolIntArray( 6, 8, 7 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 14, 13, 12 ), PoolIntArray( 17, 16, 15 ), PoolIntArray( 20, 19, 18 ), PoolIntArray( 23, 22, 21 ), PoolIntArray( 26, 25, 24 ), PoolIntArray( 29, 28, 27 ), PoolIntArray( 32, 31, 30 ), PoolIntArray( 35, 34, 33 ), PoolIntArray( 37, 36, 38 ), PoolIntArray( 38, 36, 39 ), PoolIntArray( 41, 40, 42 ), PoolIntArray( 42, 40, 43 ), PoolIntArray( 45, 44, 46 ), PoolIntArray( 46, 44, 47 ), PoolIntArray( 49, 48, 50 ), PoolIntArray( 50, 48, 51 ), PoolIntArray( 52, 54, 53 ), PoolIntArray( 57, 56, 55 ), PoolIntArray( 60, 59, 58 ), PoolIntArray( 62, 61, 63 ), PoolIntArray( 63, 61, 66 ), PoolIntArray( 63, 66, 65 ), PoolIntArray( 63, 65, 64 ), PoolIntArray( 67, 69, 68 ), PoolIntArray( 72, 71, 70 ), PoolIntArray( 75, 74, 73 ) ]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="PanoramaSky" id=4]
+panorama = ExtResource( 16 )
+
+[sub_resource type="Environment" id=5]
+background_mode = 2
+background_sky = SubResource( 4 )
+ambient_light_sky_contribution = 0.1
+
+[sub_resource type="BoxShape" id=6]
+
+[node name="Node" type="Node"]
+
+[node name="GameController" parent="." instance=ExtResource( 11 )]
+
+[node name="SignalGenerator" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="Structures" type="Node" parent="."]
+
+[node name="ArmoredCar" parent="Structures" instance=ExtResource( 2 )]
+transform = Transform( -0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -5.4617, 2.06489, 0 )
+IsPreviewScene = false
+TurretUpLimit = 45.0
+TurretDownLimit = -15.0
+
+[node name="KinematicBody" parent="Structures" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6266, 1.29531, -32.925 )
+TeamID = 2
+IsPreviewScene = false
+TurretUpLimit = 70.0
+TurretDownLimit = -70.0
+
+[node name="Resources" type="Node" parent="."]
+
+[node name="CrystalNode" parent="Resources" instance=ExtResource( 3 )]
+transform = Transform( 7.11443, 0, 0, 0, 3.90311, 0, 0, 0, 7.17742, 6.451, 1.26931, 0 )
+ResourceType = 2
+
+[node name="Terrain" type="Node" parent="."]
+
+[node name="Spatial" type="StaticBody" parent="Terrain"]
+
+[node name="Navigation" type="Navigation" parent="Terrain/Spatial"]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Terrain/Spatial/Navigation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.59371, 0, 0, 0 )
+navmesh = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Terrain/Spatial/Navigation/NavigationMeshInstance"]
+transform = Transform( 46, 0, 0, 0, 1, 0, 0, 0, 29.2023, 0, 0, 0 )
+material_override = ExtResource( 1 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Terrain/Spatial"]
+transform = Transform( 46, 0, 0, 0, 1, 0, 0, 0, 46.54, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.632651, -0.0462658, -0.773054, 0.0698169, 0.997556, -0.00256516, 0.771283, -0.0523493, 0.634335, 0, 3.70541, 0 )
+script = ExtResource( 14 )
+WeaponTwoScene = ExtResource( 4 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.85683, 251.424, 103.59 )
+shadow_enabled = true
+
+[node name="DebugRenderer" parent="." instance=ExtResource( 12 )]
+DebugMaterial = ExtResource( 17 )
+
+[node name="Units" type="Node" parent="."]
+
+[node name="Effects" type="Node" parent="."]
+
+[node name="SelectionMeshInstance" type="MeshInstance" parent="Effects"]
+
+[node name="Area" type="Area" parent="Effects/SelectionMeshInstance"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="Effects/SelectionMeshInstance/Area"]
+shape = SubResource( 6 )

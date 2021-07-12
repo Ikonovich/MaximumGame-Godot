@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/coin1.ogg-3b9da65633aca0cc0d8b5b0c0baaa103.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/coin1.ogg"
+dest_files=[ "res://.import/coin1.ogg-3b9da65633aca0cc0d8b5b0c0baaa103.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

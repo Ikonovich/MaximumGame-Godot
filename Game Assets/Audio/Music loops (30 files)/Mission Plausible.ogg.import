@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Mission Plausible.ogg-684a24e6facbce9b78d740393a84aefc.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Mission Plausible.ogg"
+dest_files=[ "res://.import/Mission Plausible.ogg-684a24e6facbce9b78d740393a84aefc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

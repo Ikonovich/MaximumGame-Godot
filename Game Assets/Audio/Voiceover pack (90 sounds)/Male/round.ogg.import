@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/round.ogg-3410cb4c2c83a591bed85f2e8654e7ec.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Male/round.ogg"
+dest_files=[ "res://.import/round.ogg-3410cb4c2c83a591bed85f2e8654e7ec.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

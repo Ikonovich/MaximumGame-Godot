@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_reloading.ogg-37674c33d700a64561b95dcd4eff95d3.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Female/war_reloading.ogg"
+dest_files=[ "res://.import/war_reloading.ogg-37674c33d700a64561b95dcd4eff95d3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

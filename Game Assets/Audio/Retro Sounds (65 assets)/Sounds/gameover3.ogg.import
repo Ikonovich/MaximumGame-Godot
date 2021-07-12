@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gameover3.ogg-83b39335a62b3b2756edd79cc28aeb7a.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/gameover3.ogg"
+dest_files=[ "res://.import/gameover3.ogg-83b39335a62b3b2756edd79cc28aeb7a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

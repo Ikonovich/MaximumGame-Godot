@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/creature5.ogg-8ac8994bce7603269d4ba5275310f1d9.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro sounds (35 sounds)/creature5.ogg"
+dest_files=[ "res://.import/creature5.ogg-8ac8994bce7603269d4ba5275310f1d9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

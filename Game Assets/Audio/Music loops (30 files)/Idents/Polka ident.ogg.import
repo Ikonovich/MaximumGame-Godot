@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Polka ident.ogg-5ca1f5a1394f0c033d2e9f462f51fd5e.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Idents/Polka ident.ogg"
+dest_files=[ "res://.import/Polka ident.ogg-5ca1f5a1394f0c033d2e9f462f51fd5e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

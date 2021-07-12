@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/zapThreeToneDown.ogg-c6749b7f096334325cad15cc72a02779.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Digital sounds (60 sounds)/zapThreeToneDown.ogg"
+dest_files=[ "res://.import/zapThreeToneDown.ogg-c6749b7f096334325cad15cc72a02779.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

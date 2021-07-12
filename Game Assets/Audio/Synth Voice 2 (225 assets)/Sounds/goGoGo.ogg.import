@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/goGoGo.ogg-ca5629018a3ca50d957382f5b545e1f7.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/goGoGo.ogg"
+dest_files=[ "res://.import/goGoGo.ogg-ca5629018a3ca50d957382f5b545e1f7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

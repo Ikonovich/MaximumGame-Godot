@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chipsStack4.ogg-279e50b228c9fe7be3396a80834dbdb4.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Casino sounds (50 sounds)/chipsStack4.ogg"
+dest_files=[ "res://.import/chipsStack4.ogg-279e50b228c9fe7be3396a80834dbdb4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

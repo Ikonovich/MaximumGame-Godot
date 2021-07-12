@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/phaserUp3.ogg-6afb01aebb8d28da3e631b77dbea9695.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Digital sounds (60 sounds)/phaserUp3.ogg"
+dest_files=[ "res://.import/phaserUp3.ogg-6afb01aebb8d28da3e631b77dbea9695.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

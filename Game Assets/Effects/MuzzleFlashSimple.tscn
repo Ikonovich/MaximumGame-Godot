@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game Assets/Materiels/MuzzleFlash.material" type="Material" id=1]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[node name="Flash0" type="MeshInstance"]
+transform = Transform( 0.268507, 0, 0, 0, 0.319774, 0, 0, 0, 0.483088, -0.339202, 1.99461, -3.09261 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )

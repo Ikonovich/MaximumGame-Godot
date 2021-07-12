@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/engine5.ogg-7420c4710745857eb9229c21ccc8213a.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/engine5.ogg"
+dest_files=[ "res://.import/engine5.ogg-7420c4710745857eb9229c21ccc8213a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

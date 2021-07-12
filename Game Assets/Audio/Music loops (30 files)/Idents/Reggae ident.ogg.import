@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Reggae ident.ogg-38b50807efc2b606c35323b210979d99.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Music loops (30 files)/Idents/Reggae ident.ogg"
+dest_files=[ "res://.import/Reggae ident.ogg-38b50807efc2b606c35323b210979d99.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

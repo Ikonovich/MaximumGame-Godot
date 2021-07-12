@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/stoneHit2.ogg-e00ae3878de5c9bfa5a2c4a46a9e6063.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Foley sounds (85 sounds)/Stone and rocks (16 sounds)/stoneHit2.ogg"
+dest_files=[ "res://.import/stoneHit2.ogg-e00ae3878de5c9bfa5a2c4a46a9e6063.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

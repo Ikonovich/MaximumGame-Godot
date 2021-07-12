@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/toiletFlush.ogg-c4f72a6f374eda4babdbe73426d59cda.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Foley sounds (85 sounds)/Bathroom (11 sounds)/toiletFlush.ogg"
+dest_files=[ "res://.import/toiletFlush.ogg-c4f72a6f374eda4babdbe73426d59cda.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

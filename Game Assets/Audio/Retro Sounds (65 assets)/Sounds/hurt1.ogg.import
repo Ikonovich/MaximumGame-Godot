@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hurt1.ogg-20e51fa2e6faf605d096bdcc518953df.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/hurt1.ogg"
+dest_files=[ "res://.import/hurt1.ogg-20e51fa2e6faf605d096bdcc518953df.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

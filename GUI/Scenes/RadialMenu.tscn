@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GUI/Scenes/RadialMenu.cs" type="Script" id=1]
+[ext_resource path="res://GUI/Icons/book-cover.png" type="Texture" id=2]
+[ext_resource path="res://GUI/Icons/missile.png" type="Texture" id=3]
+[ext_resource path="res://GUI/Icons/player-next.png" type="Texture" id=4]
+[ext_resource path="res://GUI/Icons/closed-book.png" type="Texture" id=5]
+
+[node name="RadialMenu" type="TextureButton"]
+show_behind_parent = true
+margin_left = 373.78
+margin_top = 275.003
+margin_right = 885.78
+margin_bottom = 787.003
+rect_scale = Vector2( 0.117149, 0.136896 )
+hint_tooltip = "\"Testing\""
+mouse_filter = 1
+button_mask = 7
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 2 )
+texture_focused = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 1
+
+[node name="TextureButton" type="TextureButton" parent="Buttons"]
+margin_left = 17.0723
+margin_top = 7.30505
+margin_right = 529.072
+margin_bottom = 519.305
+hint_tooltip = "Missile Test Button"
+mouse_filter = 1
+mouse_default_cursor_shape = 1
+texture_normal = ExtResource( 3 )
+
+[node name="TextureButton2" type="TextureButton" parent="Buttons"]
+margin_left = 17.0723
+margin_top = 7.30518
+margin_right = 529.072
+margin_bottom = 519.305
+hint_tooltip = "Swap Units"
+mouse_filter = 1
+mouse_default_cursor_shape = 1
+texture_normal = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]

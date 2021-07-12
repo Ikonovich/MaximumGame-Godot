@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hit2.ogg-6cdedc82e63ea234195273f1e6a52b31.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Retro Sounds (65 assets)/Sounds/hit2.ogg"
+dest_files=[ "res://.import/hit2.ogg-6cdedc82e63ea234195273f1e6a52b31.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/surrenderOrDie.ogg-b77afdaf34e9f1f38ced709c6ef18359.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Synth Voice 2 (225 assets)/Sounds/surrenderOrDie.ogg"
+dest_files=[ "res://.import/surrenderOrDie.ogg-b77afdaf34e9f1f38ced709c6ef18359.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

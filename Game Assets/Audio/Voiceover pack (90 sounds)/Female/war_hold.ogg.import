@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/war_hold.ogg-0b4e84c2d50a82be1861d63b2bbe161e.oggstr"
+
+[deps]
+
+source_file="res://Game Assets/Audio/Voiceover pack (90 sounds)/Female/war_hold.ogg"
+dest_files=[ "res://.import/war_hold.ogg-0b4e84c2d50a82be1861d63b2bbe161e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
