@@ -1,0 +1,5 @@
+Couldn't fit these texture variations in a 500mb package:
+
+https://drive.google.com/open?id=1IUzhNOdsSvPfW0WRdK_d6ZNvOdrX7nuW
+
+Diffuse-only camouflage and flat-colored PBR textures inside.
