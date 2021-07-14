@@ -36,10 +36,14 @@ namespace MaxGame.Units.Control {
 		// </remarks>
 		public override void RunState() {
 
-			float distance = (TargetPoint - Parent.GlobalTransform.origin).Length();
+
+			float distance = (Parent.GlobalTransform.origin - TargetPoint).Length();
 			if (distance > MovementController.DistanceMargin) {
 
 				MovementController.MoveToPoint(TargetPoint);
+				Console.WriteLine("MoveToPoint state running");
+
+
 			}
 			else {
 				Console.WriteLine("Moving to point complete, returning to idle");
@@ -55,12 +59,16 @@ namespace MaxGame.Units.Control {
 		public override void InitializeState() {
 
 			TargetPoint = Parent.TargetPoint;
+			Console.WriteLine("Target set to " + TargetPoint.ToString());
 		}
 
 		// <remarks>
 		// Called when moving into this state.
 		// </remarks>
 		public override void BeginState() {
+
+			Console.WriteLine("MoveToPoint state is beginning");
+
 
 			InitializeState();
 

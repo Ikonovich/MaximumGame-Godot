@@ -24,7 +24,7 @@ namespace MaxGame.Units.Control {
 		// Stores the distance from a point that is acceptable to consider it reached.
 		//
 		// </remarks>
-		public float DistanceMargin = 10.0f;
+		public float DistanceMargin = 5.0f;
 
 		public float Accel = 1.0f;
 
@@ -39,11 +39,13 @@ namespace MaxGame.Units.Control {
 		//
 		// </remarks>
 
-		public float FollowMargin = 1.0f;
+		public float FollowDistance = 20.0f;
 
 
 
 		public override void _Ready() {
+
+			Parent = (Unit)GetParent().GetParent().GetParent();
 
 
 		}
@@ -61,6 +63,7 @@ namespace MaxGame.Units.Control {
 
 			if (InputVector.Length() > 0.01) {
 
+				
 				//Console.WriteLine("Input vector is non-zero");
 				
 				InputVector = InputVector.Normalized();
@@ -124,7 +127,8 @@ namespace MaxGame.Units.Control {
 		public void  MoveToPoint(Vector3 point) {
 
 
-			Console.WriteLine("Moving to " + point.ToString());
+			//Console.WriteLine("Moving to " + point.ToString());
+
 			Vector3 steeringVector = new Vector3(Vector3.Zero);
 			Vector3 movementVector = new Vector3(Vector3.Zero);
 
@@ -166,7 +170,7 @@ namespace MaxGame.Units.Control {
 		
 		public void MoveToFollow(Spatial target) {
 
-			 Vector3 desiredVector = (target.GlobalTransform.origin - Parent.GlobalTransform.origin.Normalized()) * Parent.MaxSpeed;
+			 Vector3 desiredVector = (target.GlobalTransform.origin - Parent.GlobalTransform.origin).Normalized() * Parent.MaxSpeed;
 
 			// Using the previous velocity to establish a gradient between the current vector
 			// and the new vector.
@@ -175,7 +179,7 @@ namespace MaxGame.Units.Control {
 
 			float distance = (target.GlobalTransform.origin - Parent.GlobalTransform.origin).Length();
 
-			if (distance > FollowMargin) {
+			if (distance > FollowDistance) {
 
 				if (CollisionDetected(movementVector) == false) {
 
@@ -188,7 +192,7 @@ namespace MaxGame.Units.Control {
 
 		public void MoveToAttack(Spatial target) {
 
-			 Vector3 desiredVector = (target.GlobalTransform.origin - Parent.GlobalTransform.origin.Normalized()) * Parent.MaxSpeed;
+			 Vector3 desiredVector = (target.GlobalTransform.origin - Parent.GlobalTransform.origin).Normalized() * Parent.MaxSpeed;
 
 			// Using the previous velocity to establish a gradient between the current vector
 			// and the new vector.

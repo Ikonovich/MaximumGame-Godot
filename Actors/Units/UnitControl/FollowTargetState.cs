@@ -30,8 +30,12 @@ namespace MaxGame.Units.Control {
 		// </remarks>
 		public override void TransitionState(MachineState newState) {
 
+			Console.WriteLine("Leaving FollowTarget state");
+
 			newState.BeginState();
-		}
+
+		}			
+
 
 
 		// <remarks>
@@ -64,6 +68,8 @@ namespace MaxGame.Units.Control {
 		// Called when moving into this state.
 		// </remarks>
 		public override void BeginState() {
+
+			Console.WriteLine("FollowTarget state is beginning");
 
 			InitializeState();
 

@@ -159,9 +159,7 @@ namespace MaxGame {
 				}
 				else {
 
-					_ProcessPathfinding(delta);
 					_ProcessTargeting(delta);
-					_ProcessMovement(delta);
 
 				}
 

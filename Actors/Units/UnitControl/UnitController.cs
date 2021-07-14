@@ -81,10 +81,27 @@ namespace MaxGame.Units.Control {
 
 		public void TransitionState(string stateName) {
 
+			Console.WriteLine("Controller is transitioning the state");
+
 			MachineState newState = StateDict[stateName];
 			MachineState activeState = StateDict[ActiveState];
 
 			activeState.TransitionState(newState);
+
+			ActiveState = stateName;
+		}
+
+
+		public void TargetAssigned(IDestructible target) {
+
+			if (target.TeamID == Parent.TeamID) {
+
+				TransitionState("FollowTarget");
+
+			}
+			else {
+				TransitionState("AttackTarget");
+			}
 		}
 
 		public string GetStance() {
@@ -92,6 +109,8 @@ namespace MaxGame.Units.Control {
 			return "Aggessive";
 			//return Parent.Stance;
 		}
+
+
 
 
 

@@ -2,7 +2,7 @@ using System;
 using Godot;
 
 
-public class RadialMenu : Area {
+public class RadialMenuPrototype : Area {
 
 	// Determines the radius of the open menu
 	[Export]

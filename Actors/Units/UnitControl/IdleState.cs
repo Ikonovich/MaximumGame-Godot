@@ -75,6 +75,9 @@ namespace MaxGame.Units.Control {
 
 		public override void BeginState() {
 
+			Console.WriteLine("Controller is beginning");
+
+
 			InitializeState();
 		}
 
@@ -89,6 +92,8 @@ namespace MaxGame.Units.Control {
 		}
 
 		public override void TransitionState(MachineState newState) {
+
+			Console.WriteLine("IdleState is transitioning the state");
 
 			EndState();
 			newState.BeginState();

@@ -25,6 +25,8 @@ namespace MaxGame.Units.Control {
 		// </remarks>
 		public override void TransitionState(MachineState newState) {
 
+			Console.WriteLine("Leaving attack target state");
+
 			newState.BeginState();
 		}
 
@@ -60,7 +62,10 @@ namespace MaxGame.Units.Control {
 		// </remarks>
 		public override void BeginState() {
 
+			Console.WriteLine("AttackTarget state is beginning");
+
 			InitializeState();
+
 
 		}
 		// <remarks>

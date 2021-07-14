@@ -377,27 +377,23 @@ namespace MaxGame {
 			}
 		}
 
-		// Called by the game controller when this unit is assigned to a target.
-
+		// Called by the game controller when this unit is assigned a new
+		// location to move to.
 		public virtual void NewTargetPoint(Vector3 targetPoint) {
 
 			TargetPoint = targetPoint;
 			UnitController.TransitionState("MoveToPoint");
 		}
 
+		// Called by the game controller when this unit is assigned a new
+		// target to move to.
+		// The UnitController handles behavior from here based on whether the unit is friendly or not.
 
 		public virtual void NewTarget(IDestructible target) {
 
 			CurrentTarget = (Spatial)target;
 
-			if (target.TeamID == TeamID) {
-
-				UnitController.TransitionState("FollowTarget");
-
-			}
-			else {
-				UnitController.TransitionState("AttackTarget");
-			}
+			UnitController.TargetAssigned(target);
 		}
 		
 		public virtual void _ProcessMovement(float delta) {
@@ -460,7 +456,6 @@ namespace MaxGame {
 
 				}
 
-				Console.WriteLine("Moving player");
 				Velocity = MoveAndSlideWithSnap(Velocity, GetFloorNormal(), Vector3.Up, true, 1, 1, true);
 				
 			}
@@ -502,7 +497,7 @@ namespace MaxGame {
 
 				if ((Range > targetVector.Length()) && (target.TeamID != TeamID)) {
 
-					Console.WriteLine("Should be rotating turret");
+					// Console.WriteLine("Should be rotating turret");
 
 
 					TargetRay.LookAt(CurrentTarget.GlobalTransform.origin, Vector3.Up);
