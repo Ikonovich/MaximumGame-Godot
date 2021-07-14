@@ -95,8 +95,8 @@ namespace MaxGame {
 		protected Spatial SelectionEffect;
 
 
-		// Stores the path new units first go to, if any.
-		Queue<Vector3> StartPath;
+		// Stores the point new units first go to, if any.
+		Vector3 RallyPoint;
 
 		public override void _Ready() {
 
@@ -239,11 +239,11 @@ namespace MaxGame {
 
 		}
 
-		public void SetStartPath(Queue<Vector3> newPath) {
+		public void SetRallyPoint(Vector3 rallyPoint) {
 
 
 			Console.WriteLine("Setting building path in building");
-			StartPath = newPath;
+			RallyPoint = rallyPoint;
 		}
 
 
@@ -266,10 +266,10 @@ namespace MaxGame {
 			buildUnit.Translation = Translation + BuildTranslation;
 
 
-			if (StartPath != null) {
+			if (RallyPoint != null) {
 
 				Console.WriteLine("Setting building path in unit");
-				buildUnit.NewPath(StartPath);
+				buildUnit.NewTargetPoint(RallyPoint);
 			}
 
 

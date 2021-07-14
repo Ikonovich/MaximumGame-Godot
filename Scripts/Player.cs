@@ -12,6 +12,8 @@ namespace MaxGame {
 		public override void _Ready() {
 
 
+
+
 			SignalGenerator = GetTree().Root.GetNode<SignalGenerator>("Node/SignalGenerator");
 
 			GameController = GetTree().Root.GetNode<GameController>("Node/GameController");
@@ -99,6 +101,50 @@ namespace MaxGame {
 
 			IsReady = true;
 			IsPreviewScene = false;
+		}
+
+		public override void _PhysicsProcess(float delta) {
+
+			if ((IsPreviewScene == false) && (IsReady == false)) {
+
+				Setup();
+
+			}
+
+			if (IsPreviewScene == false) {
+				InputVector = new Vector3();
+
+				if (IsPlayer) {
+
+					_ProcessInput(delta);
+					Selector.CursorCheck();
+					_ProcessMovement(delta);
+
+				}
+				else {
+
+					_ProcessPathfinding(delta);
+					_ProcessTargeting(delta);
+
+				}
+
+				
+				_ProcessCamera();
+
+
+				// Handles disapeparing unit on death
+
+				if (IsDead == true) {
+
+					DeathCountdown -= delta;
+
+					if (DeathCountdown <= 0) {
+
+						QueueFree();
+					}
+
+				}
+			}
 		}
 
 	}

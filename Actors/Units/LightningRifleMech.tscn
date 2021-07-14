@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Game Assets/Models/MechPack_SpidersAndTanks/MC_Spiders_and_Tanks/Spiders_main_mat.material" type="Material" id=1]
 [ext_resource path="res://Scripts/FirstPersonCamera.cs" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://GUI/Scenes/HoverButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game Assets/ParticlePack/circle_01.png" type="Texture" id=7]
 [ext_resource path="res://Weapons/Selector.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Actors/Units/UnitControl/UnitPackage.tscn" type="PackedScene" id=9]
 [ext_resource path="res://StatusBar.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -655,6 +656,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.766745, -0.165263, -0.162318
 "anims/Take 001" = SubResource( 13 )
 
 [node name="WeaponMount" type="Spatial" parent="SpiderLegsLT/Armature/Skeleton/BoneAttachment/Mount_Top"]
+transform = Transform( 1, 3.38813e-21, 0, -1.69407e-21, 1, 1.7053e-13, 0, -1.7053e-13, 1, 125.039, 77.8229, 177.73 )
 
 [node name="Selector" parent="SpiderLegsLT/Armature/Skeleton/BoneAttachment/Mount_Top" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, -5.68434e-14, 0, 5.68434e-14, 1, 0, 78.0968, 108.003 )
@@ -701,3 +703,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10179, 4.31977, -0.426198 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 2.19457, 0, 0, 0, 1.91455, 0, 0, 0, 2.36931, 0, 1.61924, -0.324379 )
 shape = SubResource( 19 )
+
+[node name="UnitPackage" parent="." instance=ExtResource( 9 )]

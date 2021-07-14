@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using Godot;
 using MagicSmoke;
+using MaxGame.Units.Control;
 
-namespace MaxGame.Unit {
+
+namespace MaxGame {
 // This class functions as the root of all mobile units in the game.
 
 	public class Unit : KinematicBody, IBuildable, IDestructible, ISensor {
@@ -19,6 +21,15 @@ namespace MaxGame.Unit {
 		public int MetalCost { get; set; } = 0;
 		[Export]
 		public int CrystalCost { get ; set; } = 0;
+
+		// <remarks>
+        // Stores the maximum allowed magnitude of the velocity vector for this unit.
+        // Used by the movement controller.
+        // </remarks>
+		[Export]
+        public float MaxSpeed = 10.0f;
+
+
 
 		[Export]
 		public NodePath TargetRayPath;
@@ -71,11 +82,15 @@ namespace MaxGame.Unit {
 		[Export]
 		public int TeamID { get; set; } = 1;
 
-		[Export]
-		public float MaxSpeed = 1.0f;
 
 		[Export]
 		public float Accel = 0.1f;
+
+		
+		public float DeaccelAir = 0.3f;
+
+		public float DeaccelGround = 0.7f;
+
 
 		
 		// <remarks>
@@ -143,7 +158,8 @@ namespace MaxGame.Unit {
 		public bool IsPreviewScene { get; set; } = true;
 
 		
-		protected Spatial CurrentTarget;
+		public Spatial CurrentTarget;
+		public Vector3 TargetPoint;
 
 
 		protected HealthBar HealthBar;
@@ -155,6 +171,8 @@ namespace MaxGame.Unit {
 
 		protected GameController GameController;
 
+		protected UnitController UnitController;
+
 		protected SignalGenerator SignalGenerator;
 
 
@@ -163,7 +181,8 @@ namespace MaxGame.Unit {
 
 
 		protected Vector3 InputVector;
-		protected Vector3 Velocity;
+
+		public Vector3 Velocity;
 
 		protected float ReloadTime;
 
@@ -221,6 +240,7 @@ namespace MaxGame.Unit {
 			Navigation = GetTree().Root.GetNode<Navigation>("Node/Terrain/Spatial/Navigation");
 
 		
+			UnitController = GetNode<UnitController>("UnitPackage/UnitController");
 			GameController = GetTree().Root.GetNode<GameController>("Node/GameController");
 
 			SelectionHalo = GetNode<Spatial>("SelectionHalo");
@@ -252,8 +272,6 @@ namespace MaxGame.Unit {
 
 		public override void _PhysicsProcess(float delta) {
 			_ProcessInput(delta);
-			_ProcessPathfinding(delta);
-			_ProcessMovement(delta);
 			_ProcessTargeting(delta);
 
 			// Handles disapeparing unit on death
@@ -361,33 +379,26 @@ namespace MaxGame.Unit {
 
 		// Called by the game controller when this unit is assigned to a target.
 
+		public virtual void NewTargetPoint(Vector3 targetPoint) {
+
+			TargetPoint = targetPoint;
+			UnitController.TransitionState("MoveToPoint");
+		}
+
+
 		public virtual void NewTarget(IDestructible target) {
 
 			CurrentTarget = (Spatial)target;
 
-			Vector3[] path = Navigation.GetSimplePath(GlobalTransform.origin, CurrentTarget.GlobalTransform.origin);
+			if (target.TeamID == TeamID) {
 
+				UnitController.TransitionState("FollowTarget");
 
-
-			Console.WriteLine("Path generated to unit");
-			
-			Queue<Vector3> pathQueue = new Queue<Vector3>(path);
-			NewPath(pathQueue);
+			}
+			else {
+				UnitController.TransitionState("AttackTarget");
+			}
 		}
-
-
-
-		public virtual void NewPath(Queue<Vector3> newPath) {
-
-			Path = newPath;
-
-			Following = true;
-
-			Console.WriteLine("New path set, Unit 335");
-			Console.WriteLine("Num of points: " + newPath.Count);
-
-		}
-
 		
 		public virtual void _ProcessMovement(float delta) {
 
@@ -399,14 +410,14 @@ namespace MaxGame.Unit {
 				
 
 
-				//Console.WriteLine("Input vector is non-zero");
+			// 	//Console.WriteLine("Input vector is non-zero");
 				
-				InputVector = InputVector.Normalized();
+			InputVector = InputVector.Normalized();
 
 				
-				// 	Multiplying the direction vector times acceleration and adding it to the velocity vector.
+			// 	// 	Multiplying the direction vector times acceleration and adding it to the velocity vector.
 
-				Velocity += (InputVector * Accel);
+			Velocity += (InputVector * Accel);
 			
 			}
 			
@@ -425,7 +436,7 @@ namespace MaxGame.Unit {
 
 				Velocity -= ((Velocity.Normalized() - InputVector.Normalized()) * DeaccelGround);
 				
-				// Checks to see if velocity is low enough to force the unit to a standstill.
+			// 	// Checks to see if velocity is low enough to force the unit to a standstill.
 
 				if (IsOnFloor() == false) {
 
@@ -437,7 +448,7 @@ namespace MaxGame.Unit {
 					Velocity = MoveAndSlideWithSnap(Velocity, GetFloorNormal(), Vector3.Up, true, 1, 0.5f, false);
 				}
 
-			
+				
 			}
 			else {
 
@@ -449,34 +460,29 @@ namespace MaxGame.Unit {
 
 				}
 
+				Console.WriteLine("Moving player");
 				Velocity = MoveAndSlideWithSnap(Velocity, GetFloorNormal(), Vector3.Up, true, 1, 1, true);
-			
+				
 			}
 
-
-
-
-			
-			// Moving the character
-			//Velocity = MoveAndSlide(Velocity, Vector3.Up);
 
 
 
 
 			// This is collision testing code, if necessary.
 
-				//int collisionCount = GetSlideCount();
+			int collisionCount = GetSlideCount();
 
-				//if (collisionCount > 1) {
+			if (collisionCount > 1) {
 
 					
-					//KinematicCollision test = GetSlideCollision(0);
+				KinematicCollision test = GetSlideCollision(0);
 
 
-					//Godot.Object collider = test.GetCollider();
+				Godot.Object collider = test.GetCollider();
 
-					//Console.WriteLine(collider.GetClass());
-				//}
+				Console.WriteLine(collider.GetClass());
+			}
 
 		}
 
@@ -628,7 +634,10 @@ namespace MaxGame.Unit {
 			}
 		}
 
-		
+		public string GetStance() {
+
+			return Stance;
+		}
 
 	}
 }

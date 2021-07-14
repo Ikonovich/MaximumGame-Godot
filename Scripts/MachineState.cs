@@ -19,7 +19,12 @@ namespace MaxGame {
         // Stores the name of this state.
         // Used to access the state in the Controller's state dictionary.
         // </remarks>
-        public abstract string Name;
+        public abstract string StateName { get; }
+
+        // <remarks>
+        // Stores the parent unit effected by this state.
+        // </remarks>
+        public abstract Unit Parent { get; set; }
 
 
         // <remarks>
@@ -48,5 +53,14 @@ namespace MaxGame {
         // Called when leaving this state to deinitialize, if necessary.
         // </remarks>
         public abstract void EndState();
+
+
+        // <remarks>
+        // Called when leaving this state reaches a state transition point. Intended to emit the
+        // ChangeState signal
+        // </remarks>
+
+        public abstract void EmitChangeState(string stateName);
+
     }
 }

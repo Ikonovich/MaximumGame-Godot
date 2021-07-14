@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Actors/Units/UnitControl/AttackTargetState.cs" type="Script" id=1]
+[ext_resource path="res://Actors/Units/UnitControl/IdleState.cs" type="Script" id=2]
+[ext_resource path="res://Actors/Units/UnitControl/MovementController.cs" type="Script" id=3]
+[ext_resource path="res://Actors/Units/UnitControl/MoveToPointState.cs" type="Script" id=4]
+[ext_resource path="res://Actors/Units/UnitControl/FollowTargetState.cs" type="Script" id=5]
+[ext_resource path="res://Actors/Units/UnitControl/UnitController.cs" type="Script" id=6]
+
+[node name="UnitPackage" type="Node"]
+
+[node name="UnitController" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="MovementController" type="Node" parent="UnitController"]
+script = ExtResource( 3 )
+
+[node name="AttackTargetState" type="Node" parent="UnitController"]
+script = ExtResource( 1 )
+
+[node name="IdleState" type="Node" parent="UnitController"]
+script = ExtResource( 2 )
+
+[node name="FollowTargetState" type="Node" parent="UnitController"]
+script = ExtResource( 5 )
+
+[node name="MoveToPoint" type="Node" parent="UnitController"]
+script = ExtResource( 4 )

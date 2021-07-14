@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using MagicSmoke;
 using Godot;
+using MaxGame.Units.Control;
 
 namespace MaxGame {
 
@@ -50,6 +51,7 @@ namespace MaxGame {
 
 		public override void _Ready() {
 
+
 			Navigation = GetTree().Root.GetNode<Navigation>("Node/Terrain/Spatial/Navigation");
 
 			
@@ -76,10 +78,13 @@ namespace MaxGame {
 			//Initialize velocity vector
 			Velocity = new Vector3();
 
+			UnitController = GetNode<UnitController>("UnitPackage/UnitController");
+
 		}		
 
 		public void Setup() {
-			
+
+
 			
 			DebugRenderer = GetNode<DebugRenderer>(DebugRenderer.ComponentPath);
 			
@@ -156,11 +161,11 @@ namespace MaxGame {
 
 					_ProcessPathfinding(delta);
 					_ProcessTargeting(delta);
+					_ProcessMovement(delta);
 
 				}
 
 				
-				_ProcessMovement(delta);
 				_ProcessCamera();
 
 
@@ -190,142 +195,145 @@ namespace MaxGame {
 			// This method processes button inputs, but not mouse movement inputs, which are handled by
 			// _Input.
 
+			if (IsPlayer == true) {
 			
 			// Counts down the selection timer
-			if (SelectionCountdown > 0) {
-				SelectionCountdown -= delta;
-			}
-
-
-			if (Input.IsActionPressed("move_forward")) {
-				InputVector -= GlobalTransform.basis.z * delta;
-
-			}
-			if (Input.IsActionPressed("move_back")) {
-				InputVector += GlobalTransform.basis.z * delta;
-				
-			}
-			if (Input.IsActionPressed("move_left")) {
-				InputVector -= GlobalTransform.basis.x * delta;
-				
-			}
-			if (Input.IsActionPressed("move_right")) {
-				InputVector += GlobalTransform.basis.x * delta;
-				
-			}
-
-			if (Input.IsActionPressed("NumOne")) {
-
-				CurrentWeapon = Selector;
-				HUD.WeaponSwap(Selector.GetIcon());
-
-			}
-			if (Input.IsActionPressed("NumTwo") && WeaponOne != null) {
-
-				CurrentWeapon = WeaponOne;			
-				HUD.WeaponSwap(WeaponOne.GetIcon());
-
-
-			}
-			if (Input.IsActionPressed("NumThree") && WeaponTwo != null) {
-
-				CurrentWeapon = WeaponTwo;
-				HUD.WeaponSwap(WeaponTwo.GetIcon());
-			}
-
-
-			
-			if (!IsGroundUnit) { 
-
-				if (Input.IsActionPressed("move_up")) {
-					InputVector += GlobalTransform.basis.y * delta;
-				
-				}    
-
-				if (Input.IsActionPressed("move_down")) {
-					InputVector -= GlobalTransform.basis.y * delta;
-				
-				}       
-
-				if (Input.IsActionPressed("rotate_left")) {
-					RotateObjectLocal(Vector3.Back, delta);
+				if (SelectionCountdown > 0) {
+					SelectionCountdown -= delta;
 				}
 
-				if (Input.IsActionPressed("rotate_right")) {
-					RotateObjectLocal(Vector3.Forward, delta);	
-				}	
-			
-			}
 
-			// End movement handling
+				if (Input.IsActionPressed("move_forward")) {
+					InputVector -= GlobalTransform.basis.z * delta;
 
-			// Begin interactions handling
+				}
+				if (Input.IsActionPressed("move_back")) {
+					InputVector += GlobalTransform.basis.z * delta;
+					
+				}
+				if (Input.IsActionPressed("move_left")) {
+					InputVector -= GlobalTransform.basis.x * delta;
+					
+				}
+				if (Input.IsActionPressed("move_right")) {
+					InputVector += GlobalTransform.basis.x * delta;
+					
+				}
+
+				if (Input.IsActionPressed("NumOne")) {
+
+					CurrentWeapon = Selector;
+					HUD.WeaponSwap(Selector.GetIcon());
+
+				}
+				if (Input.IsActionPressed("NumTwo") && WeaponOne != null) {
+
+					CurrentWeapon = WeaponOne;			
+					HUD.WeaponSwap(WeaponOne.GetIcon());
 
 
-			if (Input.IsActionPressed("shoot") && (SelectionCountdown <= 0) && (IsBuilding == false)) {
+				}
+				if (Input.IsActionPressed("NumThree") && WeaponTwo != null) {
 
-				SelectionCountdown = SelectionTimer;
-				CurrentWeapon.Shoot();
+					CurrentWeapon = WeaponTwo;
+					HUD.WeaponSwap(WeaponTwo.GetIcon());
+				}
 
-			}
 
-			if (Input.IsActionJustReleased("shoot") && (CurrentWeapon == Selector) && (IsBuilding == true) && SelectionCountdown <= 0) {
-				Console.WriteLine("Should be finalizing build from player input");
-				Selector.FinalizeBuild();
 				
+				if (!IsGroundUnit) { 
+
+					if (Input.IsActionPressed("move_up")) {
+						InputVector += GlobalTransform.basis.y * delta;
+					
+					}    
+
+					if (Input.IsActionPressed("move_down")) {
+						InputVector -= GlobalTransform.basis.y * delta;
+					
+					}       
+
+					if (Input.IsActionPressed("rotate_left")) {
+						RotateObjectLocal(Vector3.Back, delta);
+					}
+
+					if (Input.IsActionPressed("rotate_right")) {
+						RotateObjectLocal(Vector3.Forward, delta);	
+					}	
+				
+				}
+
+				// End movement handling
+
+				// Begin interactions handling
+
+
+				if (Input.IsActionPressed("shoot") && (SelectionCountdown <= 0) && (IsBuilding == false)) {
+
+					SelectionCountdown = SelectionTimer;
+					CurrentWeapon.Shoot();
+
+				}
+
+				if (Input.IsActionJustReleased("shoot") && (CurrentWeapon == Selector) && (IsBuilding == true) && SelectionCountdown <= 0) {
+					Console.WriteLine("Should be finalizing build from player input");
+					Selector.FinalizeBuild();
+					
+				}
+
+				if (Input.IsActionJustReleased("shoot") && (CurrentWeapon == Selector) && (IsBuilding == false)) {
+
+					Selector.Release();
+				}
+
+
+
+				// This tells the selector to get the point it's raycast is colliding with the environment
+				// and send it to the GameController so that each currently selected unit can be directed
+				// to move towards it.
+
+				if (Input.IsActionJustReleased("move")) {
+
+					Selector.GetTarget();
+				}
+				
+
+				// This function allows the mouse to be released from the UI.
+
+				if (Input.IsActionJustPressed("ui_cancel") && (MenuOpen == false)) {
+
+
+					HUD.OpenBuildMenu(GetBuildableItems(), this);
+					OpenMenu(TeamID);
+					MenuOpen = true;
+
+
+				}
+				else if (Input.IsActionJustPressed("ui_cancel") && (MenuOpen == true)) {
+
+					SignalGenerator.EmitCloseMenu(TeamID);
+					CloseMenu(TeamID);
+					MenuOpen = false;
+				}
+
+				// This function recaptures the mouse.
+				if (Input.IsActionPressed("ui_accept")) {
+
+					Input.SetMouseMode(Input.MouseMode.Captured);
+				}
+				
+				// This function swaps between the first and third person camera views.
+				if (Input.IsActionJustPressed("swap_camera")) {
+
+					GameController.SwapCamera();
+				}
+
 			}
-
-			if (Input.IsActionJustReleased("shoot") && (CurrentWeapon == Selector) && (IsBuilding == false)) {
-
-				Selector.Release();
-			}
-
-
-
-			// This tells the selector to get the point it's raycast is colliding with the environment
-			// and send it to the GameController so that each currently selected unit can be directed
-			// to move towards it.
-
-			if (Input.IsActionJustReleased("move")) {
-
-				Selector.GetTarget();
-			}
-			
-
-			// This function allows the mouse to be released from the UI.
-
-			if (Input.IsActionJustPressed("ui_cancel") && (MenuOpen == false)) {
-
-
-				HUD.OpenBuildMenu(GetBuildableItems(), this);
-				OpenMenu(TeamID);
-				MenuOpen = true;
-
-
-			}
-			else if (Input.IsActionJustPressed("ui_cancel") && (MenuOpen == true)) {
-
-				SignalGenerator.EmitCloseMenu(TeamID);
-				CloseMenu(TeamID);
-				MenuOpen = false;
-			}
-
-			// This function recaptures the mouse.
-			if (Input.IsActionPressed("ui_accept")) {
-
-				Input.SetMouseMode(Input.MouseMode.Captured);
-			}
-			
-			// This function swaps between the first and third person camera views.
-			if (Input.IsActionJustPressed("swap_camera")) {
-
-				GameController.SwapCamera();
-			}
-
-			// End taking keyboard input
+				// End taking keyboard input
 
 		}
 		
+
 		// This function keeps the HUD centered.
 		public void _ProcessCamera() {
 

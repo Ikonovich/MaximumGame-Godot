@@ -1,10 +1,9 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Game Assets/Models/Nature Kit/grass.material" type="Material" id=1]
-[ext_resource path="res://Actors/Units/ArmoredCar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Units/LightningRifleMech.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ResourceNode.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Weapons/RayMiner.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Actors/Units/LightningRifleMech.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/SignalGenerator.cs" type="Script" id=7]
 [ext_resource path="res://GameController.tscn" type="PackedScene" id=11]
@@ -41,18 +40,8 @@ script = ExtResource( 7 )
 
 [node name="Structures" type="Node" parent="."]
 
-[node name="ArmoredCar" parent="Structures" instance=ExtResource( 2 )]
-transform = Transform( -0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -5.4617, 2.06489, 0 )
-IsPreviewScene = false
-TurretUpLimit = 45.0
-TurretDownLimit = -15.0
-
-[node name="KinematicBody" parent="Structures" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6266, 1.29531, -32.925 )
-TeamID = 2
-IsPreviewScene = false
-TurretUpLimit = 70.0
-TurretDownLimit = -70.0
+[node name="KinematicBody" parent="Structures" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4671, 1.29531, 0 )
 
 [node name="Resources" type="Node" parent="."]
 
@@ -81,9 +70,10 @@ transform = Transform( 46, 0, 0, 0, 1, 0, 0, 0, 46.54, 0, 0, 0 )
 shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.632651, -0.0462658, -0.773054, 0.0698169, 0.997556, -0.00256516, 0.771283, -0.0523493, 0.634335, 0, 3.70541, 0 )
+transform = Transform( 0.632651, -0.0462658, -0.773054, 0.0698169, 0.997556, -0.00256516, 0.771283, -0.0523493, 0.634335, 0, 29.2776, 0 )
 script = ExtResource( 14 )
 WeaponTwoScene = ExtResource( 4 )
+IsPreviewScene = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 5 )

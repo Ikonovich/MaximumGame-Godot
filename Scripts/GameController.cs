@@ -253,33 +253,19 @@ namespace MaxGame {
 
 
 		public void PointTargeted(Vector3 targetPoint) {
-
-			Console.WriteLine("Target point:");
-
-				Console.WriteLine(targetPoint);
-
+			
 
 			foreach (Unit item in SelectedList) {
 
-				Vector3[] path = Navigation.GetSimplePath(item.GlobalTransform.origin, targetPoint);
-
-
-				Console.WriteLine("Path generated");
-				
-				Queue<Vector3> pathQueue = new Queue<Vector3>(path);
-				item.NewPath(pathQueue);
-
+				item.NewTargetPoint(targetPoint);
 			}
 
+			
 			if (SelectedBuilding != null) {
 
-				Vector3[] path = Navigation.GetSimplePath(SelectedBuilding.GlobalTransform.origin + SelectedBuilding.BuildTranslation, targetPoint);
-
 				Console.WriteLine("BUilding path generated");
-				
-				Queue<Vector3> pathQueue = new Queue<Vector3>(path);
 
-				SelectedBuilding.SetStartPath(pathQueue);
+				SelectedBuilding.SetRallyPoint(targetPoint);
 			}
 		}
 

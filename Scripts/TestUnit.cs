@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using MagicSmoke;
 using Godot;
+using MaxGame.Units.Control;
 
 namespace MaxGame {
 
@@ -16,12 +17,16 @@ namespace MaxGame {
 		public bool IsMoving = false;
 		
 		// Experimental Movement controller
-		MovementHandler MovementHandler;
+		MovementController MovementController;
+
+		// Target point
+		Vector3 TargetPoint;
 
 
 		public override void _Ready() {
 
-			MovementHandler = GetNode<MovementHandler>("UnitPackage/MovementHandler");
+			MovementController = GetNode<MovementController>("UnitPackage/MovementController");
+			MovementController.Parent = this;
 
 			Navigation = GetTree().Root.GetNode<Navigation>("Node/Terrain/Spatial/Navigation");
 
@@ -50,16 +55,64 @@ namespace MaxGame {
 			Velocity = new Vector3();
 
 		}		
+
+		public override void _PhysicsProcess(float delta) {
+			if ((IsPreviewScene == false) && (IsReady == false)) {
+
+				Setup();
+
+			}
+
+			if (IsPreviewScene == false) {
+				InputVector = new Vector3();
+
+				if (IsPlayer) {
+
+					_ProcessInput(delta);
+					Selector.CursorCheck();
+
+				}
+				else {
+
+					//_ProcessPathfinding(delta);
+					//_ProcessTargeting(delta);
+
+				}
+
+				
+				_ProcessMovement(delta);
+				_ProcessCamera();
+
+
+				// Handles disapeparing unit on death
+
+				if (IsDead == true) {
+
+					DeathCountdown -= delta;
+
+					if (DeathCountdown <= 0) {
+
+						QueueFree();
+					}
+
+				}
+			}
+		}
 	
 		public override void _ProcessMovement(float delta) {
 
-			// Stores a temporary target point for testing.
+			if (TargetPoint != Vector3.Zero) {
+				MovementController.MoveToPoint(TargetPoint);
+			}
 
-			Vector3 targetPoint = GlobalTransform.origin + new Vector3(20.0f, 0.0f, 15.0f);
-
-
-			MovementHandler.MoveToPoint(targetPoint);
 		}
+
+		public void SetTarget(Vector3 targetPoint) {
+
+			TargetPoint = targetPoint;
+
+		}
+
 
 	}
 }
