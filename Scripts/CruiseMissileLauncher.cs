@@ -4,20 +4,16 @@ using MagicSmoke;
 
 namespace MaxGame {
 
-	public class CruiseMissileLauncher : StaticTurret {
+	public class CruiseMissileLauncher : Building {
 
 		private MissileLauncher Launcher;
 		
+		
 		public override void _Ready() {
 
-			DebugRenderer = GetNode<DebugRenderer>(DebugRenderer.ComponentPath);
-			//DetectionArea = GetNode<Area>("DetectionArea");
+			SelectionEffect = GetNode<Spatial>("SelectionEffect");
+			SelectionEffect.Hide();
 
-			//DetectionArea.Connect("body_entered", this, "TargetDetected");
-			//DetectionArea.Connect("body_exited", this, "TargetGone");
-
-			//HealthBar = GetNode<HealthBar>("StatusBar");
-			//HealthBar.UpdateHealth(Health, MaxHealth);
 
 			Launcher = GetNode<MissileLauncher>("Launcher");
 
@@ -26,16 +22,30 @@ namespace MaxGame {
 		public override void _PhysicsProcess(float delta) {
 
 			
-			
-			if (Input.IsActionJustPressed("missile_test")) {
-				Shoot();
-			}
 		}
 
-		public override void Shoot() {
+		public void Shoot() {
 
-			Launcher.Shoot();
 		}
 
-	}
+		public override void SetTarget(Vector3 targetPoint) {
+
+
+			Console.WriteLine("Setting cruise missile target point");
+			//TargetPoint = targetPoint;
+
+			Launcher.Shoot(targetPoint);		}
+
+		
+		public override void SetTarget(IDestructible targetItem) {
+
+
+			Console.WriteLine("Setting cruise missile target object");
+			//TargetItem = targetItem;
+			Launcher.Shoot(targetItem);
+		}
+
+
+
+	}	
 }

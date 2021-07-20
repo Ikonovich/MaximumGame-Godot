@@ -10,6 +10,11 @@ namespace MaxGame {
 		[Export]
 		public float ProjectileImpulse = 10.1f;
 
+		// The total amount of accelerated that will be applied when the object is fired, 
+		// multiplied by the mass and applied over the launch time.
+		[Export]
+		public float ProjectileAcceleration = 50.0f;
+
 		[Export]
 		public float ProjectileDamage = 15.0f;
 
@@ -17,8 +22,12 @@ namespace MaxGame {
 		public float FlightTimeMax = 2000.0f;
 
 
-		// Stores whether or not the launching impulse has been applied.
-		private bool Launched = false;
+		// Determines how long the projectile force is applied.
+		protected float LaunchTime = 0.1f;
+		
+
+		protected bool IsLaunched = false;
+
 
 		private float FlightTimeCurrent = 0.0f;
 
@@ -36,19 +45,15 @@ namespace MaxGame {
 
 		public override void _PhysicsProcess(float delta) {
 
-			
-			FlightTimeMax += delta;
+			if (IsLaunched == false) {
 
+			 	ApplyCentralImpulse(ProjectileAcceleration * Mass * -Transform.basis.z);
+			 	Console.WriteLine("Applying projectile force");
 
-			Vector3 launchImpulse = new Vector3(Transform.basis.z * ProjectileImpulse);
-
-
-			AddCentralForce(launchImpulse);
-
-			if (FlightTimeCurrent >= FlightTimeMax) {
-
-				QueueFree();
+				IsLaunched = true;
 			}
+
+
 		}
 
 		public void Collided(Godot.Object body) {

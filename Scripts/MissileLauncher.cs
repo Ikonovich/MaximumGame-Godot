@@ -15,30 +15,44 @@ namespace MaxGame {
 
 		public override void _PhysicsProcess(float delta) {
 
-			if (ReloadCountdown > 0) {
-				ReloadCountdown -= delta;
-			}
 		}
 
-		public override void Shoot() {
+		public void Shoot(IInteractable target) {
+			
+
+
+			Missile projectile = (Missile)ProjectileScene.Instance();
+			Node root = GetTree().Root;
+			root.AddChild(projectile);
+
+			projectile.GlobalTransform = GlobalTransform;
+			projectile.Scale = new Vector3(1,1,1);
+
+			projectile.SetTarget(target);
+			float damage = projectile.ProjectileDamage * DamageMultiplier;
+
+
+			Console.WriteLine("Missile Launcher fired");
+			
+		}
 		
-			if (ReloadCountdown <= 0) {
+		
 
-				Missile projectile = (Missile)ProjectileScene.Instance();
-				Node root = GetTree().Root;
-				root.AddChild(projectile);
+		public void Shoot(Vector3 target) {
 
-				projectile.GlobalTransform = GlobalTransform;
-				projectile.Scale = new Vector3(1,1,1);
 
-				float damage = projectile.ProjectileDamage * DamageMultiplier;
+			Missile projectile = (Missile)ProjectileScene.Instance();
+			Node root = GetTree().Root;
+			root.AddChild(projectile);
 
-				ReloadCountdown = ReloadTime;
+			projectile.GlobalTransform = GlobalTransform;
+			projectile.Scale = new Vector3(1,1,1);
+			projectile.SetTarget(target);
+			float damage = projectile.ProjectileDamage * DamageMultiplier;
 
-				Console.WriteLine("Missile Launcher fired");
+			Console.WriteLine("Missile Launcher fired");
+			
 
-				
-			}
 
 		}
 

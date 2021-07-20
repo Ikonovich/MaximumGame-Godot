@@ -12,12 +12,22 @@ namespace MaxGame {
 	public interface IInteractable {
 
 		
+		bool IsSelected { get; set; }
+
+		int TeamID { get; set; }
 
 		void CursorInteract();
 
 		void Selected();
 
 		void Deselected();
+
+		void RightSelected();
+
+		void SetTarget(IDestructible target);
+
+		void SetTarget(Vector3 targetPoint);
+
 		
 	}
 }

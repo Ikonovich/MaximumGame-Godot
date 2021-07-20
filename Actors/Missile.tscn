@@ -53,3 +53,4 @@ shape = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, -2.23481 )
 
 [node name="TargetRay" type="RayCast" parent="."]
+cast_to = Vector3( 0, 0, -1 )

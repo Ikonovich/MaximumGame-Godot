@@ -59,12 +59,6 @@ namespace MaxGame {
 			// HUDHealthBar = GetNode<TextureProgress>("HUD/HealthBar");
 			// HUDHealthBar.UpdateHealth(Health, MaxHealth);
 			
-
-
-			// Set up the hover button
-			HoverButton = GetNode<HoverButton>("HoverButton");
-			HoverButton.Hide();
-			
 			// Checks to see if weapon scenes have been set and, if so, casts them to spatial
 			// sets them as children of WeaponMount node.
 

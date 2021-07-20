@@ -23,11 +23,11 @@ namespace MaxGame {
 		public int CrystalCost { get ; set; } = 0;
 
 		// <remarks>
-        // Stores the maximum allowed magnitude of the velocity vector for this unit.
-        // Used by the movement controller.
-        // </remarks>
+		// Stores the maximum allowed magnitude of the velocity vector for this unit.
+		// Used by the movement controller.
+		// </remarks>
 		[Export]
-        public float MaxSpeed = 10.0f;
+		public float MaxSpeed = 10.0f;
 
 
 
@@ -81,7 +81,6 @@ namespace MaxGame {
 
 		[Export]
 		public int TeamID { get; set; } = 1;
-
 
 		[Export]
 		public float Accel = 0.1f;
@@ -147,9 +146,6 @@ namespace MaxGame {
 		// Stores the selection halo for each object.
 		protected Spatial SelectionHalo;
 
-		// Keeps track of whether or not the unit is selected.
-		public bool IsSelected = false;
-
 		// A bool used to determine whether or not this is a preview unit.
 		// If it is, the HUD will not be instanced.
 		// This is necessary to prevent infinite recursive viewports in the build menus.
@@ -165,15 +161,17 @@ namespace MaxGame {
 		protected HealthBar HealthBar;
 
 
-		// This menu serves as the interaction menu, and shows up on mouseover.
+		// This menu serves as the interaction menu, and shows up on right click.
 		
-		protected Sprite3D RadialMenu;
+		protected RadialMenu RadialMenu;
 
 		protected GameController GameController;
 
 		protected UnitController UnitController;
 
 		protected SignalGenerator SignalGenerator;
+
+
 
 
 		// Sensor area 
@@ -189,8 +187,6 @@ namespace MaxGame {
 		protected float ReloadCounter;
 
 		protected Tween TargetAnimation;
-
-		protected HoverButton HoverButton;
 
 		// Stores the position vectors for the unit's path
 		protected Queue<Vector3> Path;
@@ -217,23 +213,41 @@ namespace MaxGame {
 		// one-shot death countdown timer. Used to call QueueFree after the death effect has gotten going.
 		protected float DeathCountdown = 1.0f;
 
-		protected bool IsDead = false;
+	
 		
 
 		// HUD, if used
 		protected HUD HUD;
 
+		
+		// Keeps track of whether or not the unit is selected.
+		public bool IsSelected { get; set; } = false;
+
+		// Keeps track of whether or not the unit's radial menu is open.
+		public bool RadialMenuOpen = false;
+
 		// Used to determine whether or not this scene's various objects have been readied.
 		// Used to transition from preview scene to a regular world scene.
 
 		protected bool IsReady = false;
-
 		
+
+		// Used to determine if the unit is dead, for activating the destruction animation.
+		protected bool IsDead = false;
+		
+
 
 		// Debug Renderer object
 		protected DebugRenderer DebugRenderer;
 
 		public override void _Ready() {
+
+			
+
+			RadialMenu = GetNode<RadialMenu>("UnitPackage/RadialMenu");
+			RadialMenu.Parent = this;
+			RadialMenu.TeamID = TeamID;
+
 
 			
 			DebugRenderer = GetNode<DebugRenderer>(DebugRenderer.ComponentPath);
@@ -379,7 +393,7 @@ namespace MaxGame {
 
 		// Called by the game controller when this unit is assigned a new
 		// location to move to.
-		public virtual void NewTargetPoint(Vector3 targetPoint) {
+		public virtual void SetTarget(Vector3 targetPoint) {
 
 			TargetPoint = targetPoint;
 			UnitController.TransitionState("MoveToPoint");
@@ -389,7 +403,7 @@ namespace MaxGame {
 		// target to move to.
 		// The UnitController handles behavior from here based on whether the unit is friendly or not.
 
-		public virtual void NewTarget(IDestructible target) {
+		public virtual void SetTarget(IDestructible target) {
 
 			CurrentTarget = (Spatial)target;
 
@@ -511,12 +525,19 @@ namespace MaxGame {
 				}
 			}
 		}
+		
+		// <remarks>
+		// This method is for selection with the left mouse button.
+		//
+		// </remarks>
+
 
 		public virtual void Selected() {
 
 			Console.WriteLine("Unit is selected");
 
 			if (IsPreviewScene == false) {
+
 				SelectionHalo.Show();
 				HealthBar.ShowItem();
 
@@ -524,15 +545,34 @@ namespace MaxGame {
 				IsSelected = true;
 			}
 		}
+
+		// <remarks>
+		// This method is for selection with the right mouse button.
+		//
+		// </remarks>
+
+		public virtual void RightSelected() {
+
+			Console.WriteLine("Unit is right selected");
+
+			if (IsPreviewScene == false) {
+
+				RadialMenu.ShowMenu();
+				RadialMenuOpen = true;
+			}
+
+		}
 		
 
 		public virtual void Deselected() {
 
 			if (IsPreviewScene == false) {
+				RadialMenu.HideMenu();
 				SelectionHalo.Hide();
 				HealthBar.HideItem();
-				HoverButton.HideItem();
 				IsSelected = false;
+				RadialMenuOpen = false;
+
 			}
 
 		}
@@ -541,7 +581,6 @@ namespace MaxGame {
 
 			if (IsPreviewScene == false) {
 				HealthBar.ShowItem();
-				HoverButton.ShowItem();
 			}
 			
 
@@ -551,8 +590,6 @@ namespace MaxGame {
 
 		public void ObjectDetected(Spatial newTarget) {
 
-
-			
 		 	if ((newTarget is IDestructible) && (CurrentTarget == null)) {
 				IDestructible target = (IDestructible)newTarget;
 			

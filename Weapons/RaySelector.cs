@@ -8,6 +8,8 @@ namespace MaxGame {
 	public class RaySelector : Weapon {
 
 
+		// Keeps track of whether or not the selector has any selected items currently.
+		public bool HasSelected = false;
 		
 		// The universal GameController
 		private GameController GameController;
@@ -58,6 +60,7 @@ namespace MaxGame {
 
 		// Stores the selected bodies and is used to send them to the GameController.
 		private Godot.Collections.Array Selected;
+
 
 
 		public override void _Ready() {
@@ -152,34 +155,14 @@ namespace MaxGame {
 
 				Godot.Object body = Ray.GetCollider();
 
-				if (body is Unit) {  
-	
-					Target = (Unit)body;
-
-					Selected.Add(Target);
-					
-					GameController.Selected(Selected);
-				
-				}
-				// Handles button selection
-
-				else if (body is Building) {
-
-
-					Building bodyActual = (Building)body;
-					bodyActual.Selected();
-
-					GameController.BuildingSelected(bodyActual);
-
-					Console.WriteLine("Iinteractable encountered");
-				}
 
 				// Used primarily for interacting with in-world buttons.
-				else if (body is IInteractable) {  
+				if (body is IInteractable) {  
 	
 					IInteractable bodyActual = (IInteractable)body;
 
-					bodyActual.Selected();
+					Selected.Add(bodyActual);
+					GameController.Selected(Selected);
 
 				}
 
@@ -193,7 +176,7 @@ namespace MaxGame {
 						
 						mesh = new CubeMesh();
 
-						mesh.Size = new Vector3(1, 20, 1);
+						mesh.Size = new Vector3(0, 20, 0);
 
 
 						Material material = ResourceLoader.Load("res://Game Assets/Materiels/SelectionAreaMaterial.material") as Material;
@@ -239,16 +222,36 @@ namespace MaxGame {
 					Selected = CollisionArea.GetOverlappingBodies();
 
 					GameController.Selected(Selected);
-
-						
-
 				}
+			}
+			else {
 
-			
-
+				Deselect();
 			}
 
 
+		}
+
+		public void RightSelect() {
+			
+			if (Ray.IsColliding()) {
+
+
+				// Store the collision point
+				Vector3 collisionPoint = Ray.GetCollisionPoint();
+				// Handles unit selection
+
+				Godot.Object body = Ray.GetCollider();
+
+				if (body is IInteractable) {  
+	
+					IInteractable target = (IInteractable)body;
+					GameController.RightSelect(target, TeamID);
+				}
+				else {
+					GameController.RightSelect(collisionPoint);
+				}
+			}
 		}
 
 		// Called to end an area selection
@@ -268,64 +271,10 @@ namespace MaxGame {
 
 		}
 
-		public void GetTarget() {
-
-			
-			Ray.ForceRaycastUpdate();
-
-			///// Debug Renderer
-
-			Vector3 start = Ray.GlobalTransform.origin;
-			Vector3 end = Ray.GlobalTransform.Xform(Ray.CastTo);
-
-			DebugRenderer.QueueLineSegment(start, end, Colors.Red, Colors.Red, duration: 1000);
-
-
-			// Alternate method of finding ray intersection
-
-			// var collisionResult = GetWorld().DirectSpaceState.IntersectRay(start, end);
-
-			// if (collisionResult?.Count > 0) {
-
-			// 	Console.WriteLine("DirectSpaceState ray collision");
-
-				
-			// 	var TargetPoint = collisionResult["position"] as Vector3? ?? Vector3.Zero;
-
-			// 	Console.WriteLine("Ray point: " + TargetPoint);
-
-			// 	GameController.PointTargeted(TargetPoint);
-
-			// }
-		
-
-			if (Ray.IsColliding()) {
-
-
-				// Store the collision point
-				Vector3 targetPoint = Ray.GetCollisionPoint();
-				// Handles unit selection
-
-				Godot.Object body = Ray.GetCollider();
-
-
-				if (body is IDestructible) {
-
-					IDestructible destructibleBody = (IDestructible)body;
-					GameController.ObjectTargeted(destructibleBody);
-
-				}
-				else {
-					
-					GameController.PointTargeted(targetPoint);
-					Console.WriteLine("Ray hitting at: " + targetPoint);
-				}
-			}
-		}
-
 		public void Deselect() {
 
 			GameController.Deselected();
+			HasSelected = false;
 
 		}
 
@@ -448,5 +397,6 @@ namespace MaxGame {
 				SetMeshesTransparent(child, alpha);
 			}
 		}
+
 	}
 }

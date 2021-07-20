@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/PlayableUnit.cs" type="Script" id=1]
 [ext_resource path="res://GUI/Scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Weapons/Selector.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Weapons/RayGun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Game Assets/Models/Space Kit/craft_racer.glb" type="PackedScene" id=5]
-[ext_resource path="res://GUI/Scenes/HoverButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://StatusBar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game Assets/Effects/HaloEffect.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/FirstPersonCamera.cs" type="Script" id=9]
@@ -31,6 +30,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.458421, -0.492504 )
 [node name="Camera" type="Camera" parent="Pivot"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107212, -0.0261438, -0.71503 )
 fov = 89.7623
+far = 400.0
 script = ExtResource( 9 )
 
 [node name="TargetRay" type="RayCast" parent="Pivot/Camera"]
@@ -55,9 +55,6 @@ shape = SubResource( 2 )
 
 [node name="craft_racer" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02613, 0.0700359, -1.51059 )
-
-[node name="HoverButton" parent="." instance=ExtResource( 6 )]
-transform = Transform( 9.14608, 0, 0, 0, 5.58895, 0, 0, 0, 5.67832, 0, 3.87091, 0 )
 
 [node name="StatusBar" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64889, 0 )

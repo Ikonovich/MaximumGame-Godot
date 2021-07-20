@@ -37,10 +37,9 @@ namespace MaxGame {
 
 		// Stores the current player item selection.
 
-		private List<Unit> SelectedList;
+		private List<IInteractable> SelectedList;
 
-		// Stores any currently selected building.
-		private Building SelectedBuilding;
+		private IInteractable RightSelected;
 
 		
 		// Navigation structure
@@ -58,7 +57,7 @@ namespace MaxGame {
 		public override void _Ready() {
 
 
-			SelectedList = new List<Unit>();
+			SelectedList = new List<IInteractable>();
 
 			SignalGenerator = GetTree().Root.GetNode<SignalGenerator>("Node/SignalGenerator");
 
@@ -174,58 +173,57 @@ namespace MaxGame {
 
 			Deselected();
 
+			SelectedList = new List<IInteractable>();
 
-			SelectedList = new List<Unit>();
 
+			// Gets the count of the selected array, because Godot sucks and the Size() function
+			// in Godot.Collections.Array doesn't seem to work.
 
-			// Checks each item to see if it's a unit, if so adds it to the SelectedList.
+			int count = 0;
 
 			foreach (Node item in selected) {
 
+				count += 1;
+			}
+			// Checks each item to see if it's a unit, if so adds it to the SelectedList.
+			// Only adds buildings if the array size = 1.
+			
+			for (int i = 0; i < count; i++) {
+				
+				IInteractable item = (IInteractable)selected[i];
+
 				if (item is Unit) {
-					SelectedList.Add((Unit)item);
+
+					item.Selected();
+					SelectedList.Add(item);
+				}
+
+				else if ((item is Building) && (count == 1)) {
+
+					item.Selected();
+					SelectedList.Add(item);
+				}
+				
+				// Used for world buttons
+				else if(count == 1) {
+
+					item.Selected();
 				}
 			}
-
-			// Goes through the selected list and applies selected functionality to each unit.
-
-			foreach (Unit unit in SelectedList) {
-
-				unit.Selected();
-
-			}
-
-
+			
 		}
 
-		// Used for selecting buildings, which can only be done individually.
-
-		public void BuildingSelected(Building building) {
-
-
-			Console.WriteLine("Setting building in game controller");
-			SelectedBuilding = building;
-		}
 
 				
 		// Goes through the selected list and applies Deselected functionality to each unit.
 
 		public void Deselected() {
 
-			foreach (Unit unit in SelectedList) {
+			foreach (IInteractable item in SelectedList) {
 
-				unit.Deselected();
+				item.Deselected();
 
 			}
-
-			if (SelectedBuilding != null) {
-
-				SelectedBuilding.Deselected();
-				SelectedBuilding = null;
-			}
-
-			SelectedList = new List<Unit>();
-
 		}
 
 		// This method handles when an object is targeted by the selector on right click.
@@ -239,33 +237,43 @@ namespace MaxGame {
 
 			Console.WriteLine("Target object:");
 
-			foreach (Unit item in SelectedList) {
+			foreach (IInteractable item in SelectedList) {
 
-				item.NewTarget(target);
-
-			}
-
-			if (SelectedBuilding != null) {
-
+				item.SetTarget(target);
 
 			}
 		}
 
 
-		public void PointTargeted(Vector3 targetPoint) {
+		public void RightSelect(Vector3 targetPoint) {
 			
 
-			foreach (Unit item in SelectedList) {
+			foreach (IInteractable item in SelectedList) {
 
-				item.NewTargetPoint(targetPoint);
+				item.SetTarget(targetPoint);
 			}
 
-			
-			if (SelectedBuilding != null) {
+		}
 
-				Console.WriteLine("BUilding path generated");
+		public void RightSelect(IInteractable target, int teamID) {
 
-				SelectedBuilding.SetRallyPoint(targetPoint);
+			Console.WriteLine("Right select target team: " + target.TeamID.ToString() + " - Ray team: " + teamID.ToString());
+
+			if ((SelectedList.Count == 0) && (target.TeamID == teamID)) {
+				target.RightSelected();
+				SelectedList.Add(target);
+			}
+			else if ((target.TeamID == teamID) && (target.IsSelected == true)) {
+
+				target.RightSelected();
+
+			}
+			else {
+
+				foreach (IInteractable item in SelectedList) {
+
+					item.SetTarget((IDestructible)target);
+				}
 			}
 		}
 

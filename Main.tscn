@@ -1,11 +1,13 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Game Assets/Models/Nature Kit/grass.material" type="Material" id=1]
 [ext_resource path="res://Actors/Units/LightningRifleMech.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ResourceNode.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Weapons/RayMiner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Actors/Buildings/MissileLauncher.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/SignalGenerator.cs" type="Script" id=7]
+[ext_resource path="res://Actors/Buildings/Turrets/Artillery.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameController.tscn" type="PackedScene" id=11]
 [ext_resource path="res://MagicSmoke/DebugRenderer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scripts/Player.cs" type="Script" id=14]
@@ -41,7 +43,18 @@ script = ExtResource( 7 )
 [node name="Structures" type="Node" parent="."]
 
 [node name="KinematicBody" parent="Structures" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4671, 1.29531, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29531, 20.7986 )
+IsPreviewScene = false
+
+[node name="KinematicBody2" parent="Structures" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9143, 1.29531, 28.4691 )
+IsPreviewScene = false
+
+[node name="MissileLauncher" parent="Structures" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08213, 2.55065, -13.538 )
+
+[node name="FBXartillery" parent="Structures" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.372, 1.99725, -0.147587 )
 
 [node name="Resources" type="Node" parent="."]
 
@@ -52,6 +65,7 @@ ResourceType = 2
 [node name="Terrain" type="Node" parent="."]
 
 [node name="Spatial" type="StaticBody" parent="Terrain"]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0 )
 
 [node name="Navigation" type="Navigation" parent="Terrain/Spatial"]
 

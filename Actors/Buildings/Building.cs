@@ -89,6 +89,7 @@ namespace MaxGame {
 
 		public bool IsPreviewScene { get; set; } = true;
 		public bool IsReady = false;
+		public bool IsSelected { get; set; }= false;
 
 		protected float SelectionCountdown = 0.0f;
 		protected float SelectionTimer = 0.300f;
@@ -96,7 +97,10 @@ namespace MaxGame {
 
 
 		// Stores the point new units first go to, if any.
-		Vector3 RallyPoint;
+		protected Vector3 TargetPoint = Vector3.Zero;
+
+		// Stores any targeted object.
+		protected IDestructible TargetItem;
 
 		public override void _Ready() {
 
@@ -111,7 +115,7 @@ namespace MaxGame {
 
 		}
 
-		public void Setup() {
+		public virtual void Setup() {
 
 			if (CanBuild == true) {
 
@@ -158,6 +162,10 @@ namespace MaxGame {
 			}
 		}
 		
+
+		// Begin IInteractable implementation
+
+
 		public void CursorInteract() {
 
 
@@ -184,15 +192,23 @@ namespace MaxGame {
 
 				SelectionEffect.Show();
 				SelectionCountdown = SelectionTimer;
-
 			}
+
+			IsSelected = true;
 
 		}
 
 		public void Deselected() {
 			
 			SelectionEffect.Hide();
+			IsSelected = false;
 		}
+
+		public void RightSelected() {
+
+		}
+
+		// End IInteractable implementation
 
 		// Takes a list of unit IDs and maps it 
 
@@ -239,11 +255,20 @@ namespace MaxGame {
 
 		}
 
-		public void SetRallyPoint(Vector3 rallyPoint) {
+		public virtual void SetTarget(Vector3 rallyPoint) {
 
 
-			Console.WriteLine("Setting building path in building");
-			RallyPoint = rallyPoint;
+			TargetItem = null;
+
+			Console.WriteLine("Setting target point in building");
+			TargetPoint = rallyPoint;
+		}
+
+		public virtual void SetTarget(IDestructible targetItem) {
+
+			Console.WriteLine("Setting target item in building");
+			TargetPoint = Vector3.Zero;
+			TargetItem = targetItem;
 		}
 
 
@@ -266,10 +291,10 @@ namespace MaxGame {
 			buildUnit.Translation = Translation + BuildTranslation;
 
 
-			if (RallyPoint != null) {
+			if (TargetPoint != null) {
 
 				Console.WriteLine("Setting building path in unit");
-				buildUnit.NewTargetPoint(RallyPoint);
+				buildUnit.SetTarget(TargetPoint);
 			}
 
 

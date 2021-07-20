@@ -51,7 +51,6 @@ namespace MaxGame {
 
 		public override void _Ready() {
 
-
 			Navigation = GetTree().Root.GetNode<Navigation>("Node/Terrain/Spatial/Navigation");
 
 			
@@ -67,10 +66,6 @@ namespace MaxGame {
 			WeaponMount = GetNode<Spatial>(WeaponMountPath);
 			TargetAnimation = GetNode<Tween>("TargetAnimation");
 
-			
-			HoverButton = GetNode<HoverButton>("HoverButton");
-			HoverButton.Hide();
-
 
 
 			Selector.Owner = this;
@@ -84,8 +79,12 @@ namespace MaxGame {
 
 		public void Setup() {
 
-
 			
+			
+			RadialMenu = GetNode<RadialMenu>("UnitPackage/RadialMenu");
+			RadialMenu.Parent = this;
+			RadialMenu.TeamID = TeamID;
+
 			DebugRenderer = GetNode<DebugRenderer>(DebugRenderer.ComponentPath);
 			
 			HealthBar = GetNode<HealthBar>("StatusBar");
@@ -101,6 +100,8 @@ namespace MaxGame {
 			HUD.TeamID = TeamID;
 			HUD.Hide();
 			CrossHair.Hide();
+
+			
 
 			GameController = GetTree().Root.GetNode<GameController>("Node/GameController");
 
@@ -290,9 +291,10 @@ namespace MaxGame {
 				// and send it to the GameController so that each currently selected unit can be directed
 				// to move towards it.
 
-				if (Input.IsActionJustReleased("move")) {
+				if (Input.IsActionJustReleased("right_click")) {
+					
+					Selector.RightSelect();
 
-					Selector.GetTarget();
 				}
 				
 
@@ -363,7 +365,6 @@ namespace MaxGame {
 			// Hide healthbar and button
 
 			HealthBar.Hide();
-			HoverButton.Hide();
 			// Show the crosshair
 			CrossHair.Show();
 			HUD.Show();
@@ -379,6 +380,8 @@ namespace MaxGame {
 			SignalGenerator.Connect("MenuClosed", this, nameof(CloseMenu));
 			SignalGenerator.Connect("EnterBuildMode", this, nameof(EnterBuildMode));
 			SignalGenerator.Connect("ExitBuildMode", this, nameof(ExitBuildMode));
+
+			SignalGenerator.EmitPlayerSet(this, TeamID);
 			
 
 		}
@@ -459,7 +462,7 @@ namespace MaxGame {
 
 					RotateObjectLocal(Vector3.Left, mouseEvent.Relative.y * mouseSensitivity);
 
-					Rotation = new Vector3(Rotation.x, yRotation, Rotation.z);
+					Rotation = new Vector3(Rotation.x, Rotation.y, 0.0f);
 
 
 				}
@@ -489,7 +492,7 @@ namespace MaxGame {
 			
 
 		}
-
+		
 
 		// Returns the items the player can currently build.
 

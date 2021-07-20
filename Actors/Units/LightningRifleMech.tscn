@@ -1,15 +1,17 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Game Assets/Models/MechPack_SpidersAndTanks/MC_Spiders_and_Tanks/Spiders_main_mat.material" type="Material" id=1]
 [ext_resource path="res://Scripts/FirstPersonCamera.cs" type="Script" id=2]
 [ext_resource path="res://Weapons/RayGun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/PlayableUnit.cs" type="Script" id=4]
 [ext_resource path="res://Game Assets/Models/MechPack_Turrets/Turret Constructor/Models_Unreal/Models/Turrets_Final_Mat2.material" type="Material" id=5]
-[ext_resource path="res://GUI/Scenes/HoverButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GUI/Scenes/RadialMenu/RadialMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game Assets/ParticlePack/circle_01.png" type="Texture" id=7]
 [ext_resource path="res://Weapons/Selector.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Actors/Units/UnitControl/UnitPackage.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GUI/Scenes/RadialMenu/CommandUnitIcon3D.tscn" type="PackedScene" id=10]
 [ext_resource path="res://StatusBar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GUI/Scenes/RadialMenu/BombIcon3D.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
@@ -424,6 +426,13 @@ IsGroundUnit = true
 CameraPath = NodePath("SpiderLegsLT/Armature/Skeleton/BoneAttachment/Mount_Top/Camera")
 SelectorPath = NodePath("SpiderLegsLT/Armature/Skeleton/BoneAttachment/Mount_Top/Selector")
 
+[node name="RadialMenu" parent="." instance=ExtResource( 6 )]
+ButtonOneScene = ExtResource( 10 )
+ButtonTwoScene = ExtResource( 12 )
+ButtonThreeScene = ExtResource( 12 )
+ButtonFourScene = ExtResource( 12 )
+ButtonFiveScene = ExtResource( 10 )
+
 [node name="SelectionHalo" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.32571, 0 )
 visible = false
@@ -684,11 +693,8 @@ material/0 = null
 
 [node name="TargetAnimation" type="Tween" parent="."]
 
-[node name="HoverButton" parent="." instance=ExtResource( 6 )]
-transform = Transform( 9.14608, 0, 0, 0, 5.58895, 0, 0, 0, 5.67832, 0, 5.87137, 0 )
-
 [node name="DetectionArea" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.27939, 0, 0, 0, 1, 0, 1.49354, 0 )
+transform = Transform( 10, 0, 0, 0, 0.279, 0, 0, 0, 10, 0, 1.49354, 0 )
 input_ray_pickable = false
 collision_layer = 0
 collision_mask = 4
@@ -705,3 +711,8 @@ transform = Transform( 2.19457, 0, 0, 0, 1.91455, 0, 0, 0, 2.36931, 0, 1.61924, 
 shape = SubResource( 19 )
 
 [node name="UnitPackage" parent="." instance=ExtResource( 9 )]
+
+[node name="RadialMenu" parent="UnitPackage" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.7085, 0 )
+
+[editable path="UnitPackage"]

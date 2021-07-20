@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Actors/Units/UnitControl/AttackTargetState.cs" type="Script" id=1]
 [ext_resource path="res://Actors/Units/UnitControl/IdleState.cs" type="Script" id=2]
@@ -6,8 +6,11 @@
 [ext_resource path="res://Actors/Units/UnitControl/MoveToPointState.cs" type="Script" id=4]
 [ext_resource path="res://Actors/Units/UnitControl/FollowTargetState.cs" type="Script" id=5]
 [ext_resource path="res://Actors/Units/UnitControl/UnitController.cs" type="Script" id=6]
+[ext_resource path="res://GUI/Scenes/RadialMenu/RadialMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GUI/Scenes/RadialMenu/BombIcon3D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GUI/Scenes/RadialMenu/CommandUnitIcon3D.tscn" type="PackedScene" id=9]
 
-[node name="UnitPackage" type="Node"]
+[node name="UnitPackage" type="Spatial"]
 
 [node name="UnitController" type="Node" parent="."]
 script = ExtResource( 6 )
@@ -26,3 +29,12 @@ script = ExtResource( 5 )
 
 [node name="MoveToPoint" type="Node" parent="UnitController"]
 script = ExtResource( 4 )
+
+[node name="RadialMenu" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.7261, 0 )
+ButtonOneScene = ExtResource( 9 )
+ButtonTwoScene = ExtResource( 8 )
+ButtonThreeScene = ExtResource( 9 )
+ButtonFourScene = ExtResource( 9 )
+ButtonFiveScene = ExtResource( 8 )
+ButtonSixScene = ExtResource( 9 )

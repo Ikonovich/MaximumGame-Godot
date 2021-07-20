@@ -13,6 +13,8 @@ namespace MaxGame {
 	
 
 	
+		[Signal]
+		public delegate void PlayerSet(PlayableUnit player, int TeaMID);
 			
 		// This signal is emitted whenever the resources for a team change. It signals all HUDs and buttons
 		// (not just the ones for one team) tp update their available resources.
@@ -44,6 +46,12 @@ namespace MaxGame {
 		
 		[Signal]
 		public delegate void ExitBuildMode();
+
+		public void EmitPlayerSet(PlayableUnit player, int teamID) {
+
+			Console.WriteLine("Emitting player set");
+			EmitSignal(nameof(PlayerSet), player, teamID);
+		}
 
 
 		public void EmitUpdateResources() {
